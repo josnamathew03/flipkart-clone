@@ -1,0 +1,16 @@
+import './Header.css'
+
+type SpanNavProps ={
+    text: string
+}
+
+const SpanNav = ({text}: SpanNavProps) => {
+  return (
+    <span className='nav-span'>
+      {text}
+      <svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" ><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z"  ></path></svg>
+    </span>
+  )
+}
+
+export default SpanNav

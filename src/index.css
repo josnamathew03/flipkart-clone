@@ -7,6 +7,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "regular";
+  src: url("./assets/font/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("./assets/font/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "italics";
+  src: url("./assets/font/roboto-regular.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a,
+img {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'regular';
+  line-height: 1.4;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

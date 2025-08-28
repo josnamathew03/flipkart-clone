@@ -1,0 +1,150 @@
+.sidebar-container {
+    flex: 0 0 280px;
+    max-width: 280px;
+    padding: 0px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 16.66%;
+}
+
+.filter-container {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .06);
+}
+
+.selected-container {
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.selected-heading-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-heading {
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 67%;
+    font-family: 'bold';
+    display: flex;
+    justify-content: flex-start;
+}
+
+.clear-container {
+    cursor: pointer;
+    color: #2874f0;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: bold;
+}
+
+.selected-items {
+    position: relative;
+    max-height: 104px;
+    overflow: hidden;
+}
+
+.selected-items-wrap {
+    margin: 8px 0 0 -4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected-each-container {
+
+    cursor: pointer;
+    font-size: 12px;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 100%, .5);
+    border-radius: 3px;
+    margin: 2px 4px 6px;
+    overflow: hidden;
+    transition: background-color .1s;
+    max-width: 200px;
+    padding: 8px;
+    display: inline-block;
+
+}
+
+.cross {
+    display: inline-block;
+}
+
+.cat-name {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-left: 8px;
+    max-width: 90%;
+}
+
+.show-more {
+    display: flex;
+    position: absolute;
+    background: #fff;
+    top: 82px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    font-weight: 500;
+    color: #2874f0;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 9px;
+    font-family: 'bold';
+}
+
+/* ------------------------------------------------------------------------- */
+
+.categories-container {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+
+}
+
+.cat-head {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #212121;
+    margin-bottom: 5px;
+    font-family: 'bold';
+}
+
+.audio-con {
+    padding: 5px 0;
+    color: rgb(33,33,33);
+    white-space: nowrap;
+}
+
+.audio-con svg {
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    fill: #878787;
+}
+
+.audio-con a {
+    color: #878787;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+}
+.headset-con svg{
+    fill: #212121 !important;
+    transform: rotate(270deg);
+}
+.headset-con a{
+    color: #212121;
+    font-family: 'bold';
+}
