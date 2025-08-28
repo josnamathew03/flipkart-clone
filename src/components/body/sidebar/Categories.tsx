@@ -29,6 +29,9 @@ const Categories = () => {
         </svg>
         <a href='/'>Headset</a>
       </div>
+      <div>
+        <a href="/" className="earphones">Earphones</a>
+      </div>
     </div>
   )
 }
