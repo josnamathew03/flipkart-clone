@@ -1,7 +1,7 @@
 const PriceFilter = () => {
   return (
     <div className='selected-container price-filter-con'>
-      <div className='selected-heading-wrap '>
+      <div className='selected-heading-wrap price-heading-wrap'>
         <div className='selected-heading selected-heading-small'>
           <span>price</span>
         </div>

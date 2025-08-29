@@ -64,6 +64,8 @@
 }
 
 .logo-wrap span {
+    font-family: 'italics';
+
     color: #ffe500;
     font-weight: 500;
 
@@ -82,7 +84,7 @@ img {
     justify-content: flex-start;
     height: 100%;
     min-width: 304px;
-    width: calc(100% - 540px);
+    width: calc( 101% - 540px );
     margin: 0 auto 0 12px;
     align-items: center;
 }
@@ -100,7 +102,7 @@ img {
     display: flex;
     height: 100%;
     justify-content: space-between;
-    flex: auto;
+    /* flex: auto; */
     border-radius: 2px;
     width: 100%;
     background-color: #fff;
@@ -110,29 +112,38 @@ img {
     position: relative;
     display: inline-block;
     width: 100%;
+
 }
 
 .input-wrap input {
     font-family: 'regular';
     border-radius: 2px 0 0 2px;
     border: 0;
+
     outline: 0 none;
     /* font-size: 14px; */
     height: 36px;
     width: 100%;
     padding: 0 16px;
+    letter-spacing: -.031px;
+    display: inline-block;
 }
+/* .search-spacer{
+    width: 16px;
+    height: 100%;
+    background-color: #fff;
 
+} */
 .search-button {
     display: flex;
     border: 1px solid #fff;
     background-color: #fff;
-    height: 36px;
+    height: 36px; 
     width: 44px;
     border-radius: 2px;
     align-items: center;
-    cursor: pointer;
-    padding: 4px 12px 0 8px;
+    cursor: pointer;    
+    padding: 4px 12px 3px 8px;
 }
 
 .header-anchors-wrap {
@@ -140,13 +151,15 @@ img {
     margin: 0 20px;
     max-width: 150px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;  
     font-family: 'bold';
     line-height: 20px;
-    font-size: 16px;
-    letter-spacing: .1px;
+    /* font-size: 16px; */
+    /* letter-spacing: .1px; */
     display: flex;
     align-items: center;
+        font-size: 15.5px;
+    letter-spacing: -.05px;
 }
 
 .login-container {
@@ -160,8 +173,8 @@ img {
     background-color: #fff;
     cursor: pointer;
     border-radius: 2px;
-    height: 32px;
-    padding: 5px 40px;
+    max-height: 32px;
+    padding: 4px 40px 4.5px;
     border: 1px solid #dbdbdb;
 
 }
@@ -188,7 +201,8 @@ img {
 .cart-wrap svg {
     width: 16px;
     height: 16px;
-    margin: 0 8px;
+    margin: 0 7.7px;
+    margin-bottom: -2px;
 }
 
 .header-nav-container {

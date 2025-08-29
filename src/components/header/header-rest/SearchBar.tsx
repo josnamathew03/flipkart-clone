@@ -8,6 +8,7 @@ const SearchBar = () => {
           <div className='input-wrap'>
             <input type='text' placeholder='Search for products, brands and more'/>
           </div>
+          <div className='search-spacer'></div>
           <Button className='search-button'>
             <svg
               width='20'
