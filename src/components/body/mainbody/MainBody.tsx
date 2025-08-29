@@ -2,7 +2,10 @@
 
 const MainBody = () => {
   return (
-    <div>
+    <div className="mainBody">
+      <div>
+
+      </div>
       
     </div>
   )
