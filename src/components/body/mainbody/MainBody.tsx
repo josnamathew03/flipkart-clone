@@ -1,3 +1,4 @@
+import CardRow from './CardRow'
 import './MainBody.css'
 
 const MainBody = () => {
@@ -55,6 +56,7 @@ const MainBody = () => {
           </div>
         </div>
       </div>
+      <CardRow/>
     </div>
   )
 }

@@ -1,0 +1,33 @@
+.footer {
+    background-color: #172337;
+    min-width: 978px;
+    border-top: 1px solid #ddd;
+    margin-top: 25px;
+}
+
+.footer-wrap {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* ---------------------------------------------- */
+.footer1-con {
+    width: 100%;
+}
+
+.footer1-wrap {
+    padding: 0 25px;
+    color: #878787;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.footer1 {
+    clear: both;
+    line-height: 16px;
+    font-size: 11px;
+    margin: 30px 0 15px;
+}
