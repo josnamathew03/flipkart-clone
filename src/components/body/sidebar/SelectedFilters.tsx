@@ -1,14 +1,19 @@
+import { useState } from 'react'
 import SelectedEach from './SelectedEach'
 
 const SelectedFilters = () => {
+  const [filters, setFilters] = useState([])
+  const handleClear = ()=>{
+    setFilters([])
+  }
   return (
     <div className='selected-container'>
       <div className='selected-heading-wrap'>
         <div className='selected-heading'>
           <span>Filters</span>
         </div>
-        <div className='clear-container'>
-          <span>Clear all</span>
+        <div className='clear-container' onClick={handleClear}>
+          <span >Clear all</span>
         </div>
       </div>
       <div className='selected-items'>

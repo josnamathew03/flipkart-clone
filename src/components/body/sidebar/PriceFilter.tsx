@@ -49,7 +49,7 @@ const PriceFilter = () => {
           label='max'
           id='max'
           options={[
-            { label: '₹600', value: 600 },
+          
             { label: '₹1000', value: 1000 },
             { label: '₹1500', value: 1500 },
             { label: '₹2000', value: 2000 },
