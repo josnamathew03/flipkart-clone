@@ -1,6 +1,5 @@
 .checkbox-con {
     padding: 3px 0;
-
 }
 
 .checkbox-label {
@@ -18,7 +17,7 @@
     left: 0;
     width: 14px;
     height: 14px;
-    z-index: 2;
+    z-index: 7;
 }
 
 .custom-checkbox {

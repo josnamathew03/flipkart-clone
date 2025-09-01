@@ -1,5 +1,6 @@
 import CardRow from './CardRow'
 import './MainBody.css'
+import Pagination from './Pagination'
 
 const MainBody = () => {
   return (
@@ -57,6 +58,7 @@ const MainBody = () => {
         </div>
       </div>
       <CardRow/>
+      <Pagination/>
     </div>
   )
 }

@@ -205,6 +205,51 @@
     width: 100%;
 }
 
+.slidebar {
+    position: relative;
+    width: 100%;
+transform: translateY(-2px);
+}
+
+.slidebar input[type="range"] {
+    /* -webkit-appearance: none; */
+    width: 101%;
+    height: 6px;
+    background: #2874f0;
+    border-radius: 5px;
+}
+
+/* movable right thumb */
+.slidebar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background: #fff !important;
+    border: 1px solid #bababa;
+    /* position: absolute; */
+    cursor: pointer;
+    top: 3.5px;
+    right: 0;
+    
+    /* margin-top: -5px; */
+}
+
+/* fake left thumb */
+.slidebar::before {
+    content: "";
+    position: absolute;
+    top: 3.5px;
+    left: 0;
+    border: 1px solid #bababa;
+
+    /* transform: translateY(-50%); */
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+}
+
 .slider-below {
     margin-top: -12px;
     display: flex;
@@ -320,6 +365,10 @@
     vertical-align: bottom;
 }
 
+.assured-icon img {
+    display: block;
+}
+
 .question-con {
     display: inline-block;
     position: relative;
@@ -351,7 +400,7 @@
     cursor: pointer;
     margin: -16px;
     padding: 16px;
-    line-height: 12.4px;
+    /* line-height: 12.4px; */
 
 
 
@@ -377,7 +426,6 @@
     vertical-align: bottom;
     cursor: pointer;
     padding: 7px 0;
-    line-height: 26px;
 }
 
 .clear-cross {
@@ -389,7 +437,7 @@
     font-size: 10px;
     text-align: center;
     color: #878787;
-    vertical-align:top;
+    vertical-align: middle;
 
 }
 
@@ -436,7 +484,6 @@
     color: #2874f0;
     text-transform: uppercase;
     cursor: pointer;
-    font-family: 'bold';
     margin-top: 9px;
 }
 

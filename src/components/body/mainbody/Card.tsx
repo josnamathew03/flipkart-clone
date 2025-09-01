@@ -1,11 +1,30 @@
-const Card = () => {
+import { productType } from "../../../types/productType"
+
+
+const Card = ({
+  id,
+  image,
+  sponsored,
+  name,
+  brand,
+  stars,
+  flipAssured,
+  price,
+  original,
+  bankOffer,
+  left
+
+
+}: productType) => {
+ 
+
   return (
     <div className='card-container'>
       <div className='card-wrap'>
         <a href='/' className='image-anchor'>
           <div className='image-con'>
             <img
-              src='https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/5/b/b/-original-imahdt83yzyjqqhe.jpeg?q=70'
+              src={image}
               alt=''
             />
           </div>
@@ -28,7 +47,7 @@ const Card = () => {
             </div>
           </div>
         </a>
-        <div className='sponsored-div'>
+        {sponsored?         <div className='sponsored-div'>
           <svg width='62' height='18' xmlns='http://www.w3.org/2000/svg'>
             <rect width='62' height='18' fill='white'></rect>
             <path
@@ -36,39 +55,46 @@ const Card = () => {
               fill='#9E9E9E'
             ></path>
           </svg>
-        </div>
+        </div>: ''}
+
         <a href='/' className='card-name'>
-          boAt Airdopes 219, 40H Battery, Free Music Streaming & ...
+          {name}
         </a>
-        <div className='card-brand'>Forest Sage, True Wireless</div>
+        <div className='card-brand'>{brand}</div>
         <div className='ratings-con'>
           <span className='ratings-span'>
             <div className='ratings'>
-              4.1
+              {stars.star}
               <img
                 src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg=='
                 alt=''
               />
             </div>
           </span>
-          <span className='total-ratings'>(2,808)</span>
+          <span className='total-ratings'>({stars.count})</span>
         </div>
-        <div className='assured-div'>
+        {
+          flipAssured?   <div className='assured-div'>
           <img
             src='https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_9e47c1.png'
             alt=''
           />
-        </div>
+        </div> : ''
+        }
+      
         <a href="/" className="card-price-con">
-            <div className="price-now">₹1,099</div>
-            <div className="ori-price">₹3,990 </div>
+            <div className="price-now">₹{price}</div>
+            <div className="ori-price">₹{original}</div>
             <div className="off-div">
                 <span>72% off</span>
             </div>
         </a>
-        <div className="bank-div">
+        {
+          bankOffer?  <div className="bank-div">
             <div>Bank Offer</div>
-        </div>
+        </div> : <div className="bank-div"><div ><div className="few-left-div">Only few left</div></div></div>
+        }
+       
       </div>
     </div>
   )

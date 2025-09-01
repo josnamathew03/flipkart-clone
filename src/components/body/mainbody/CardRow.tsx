@@ -1,15 +1,26 @@
-import Card from "./Card"
+import { useEffect, useState } from 'react'
+import { productType } from "../../../types/productType"
 
+import Card from './Card'
 
 const CardRow = () => {
-  return (
-    <div className="card-row">
-      <div className="card-row-con">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+  const [products,setProducts]=useState<productType[]>([])
 
+  useEffect(()=>{
+    fetch('/data/products.json')
+    .then(res => res.json())
+    .then((data: productType[]) => setProducts(data))
+    .catch(err=> console.log(" error ", err))
+  },[])
+    console.log(products)
+
+  return (
+    
+    <div className='card-row'>
+      <div className='card-row-con'>
+        {products.map(product => (
+          <Card key={product.id} {...product} />
+        ))}
       </div>
     </div>
   )

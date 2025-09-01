@@ -9,6 +9,7 @@ import CustomerRatings from './CustomerRatings'
 import Discount from './Discount'
 import Features from './Features'
 import GetInvoice from './GetInvoice'
+import HeadphoneDesign from './HeadphoneDesign'
 import HeadphoneType from './HeadphoneType'
 import NewArrivals from './NewArrivals'
 import Offers from './Offers'
@@ -31,6 +32,7 @@ const Sidebar = () => {
             <Brand/>
             <Discount/>
             <Features/>
+            <HeadphoneDesign/>
             <Color/>
             <Offers/>
             <Availability/>
@@ -40,7 +42,7 @@ const Sidebar = () => {
         </div>
         <div className='need-help-container'>
           <div className='need-help-wrap'>
-            <span>Need Help?</span>
+            <span>Need help?</span>
           </div>
           <div className='help-con'>
             <span>Help me decide</span>

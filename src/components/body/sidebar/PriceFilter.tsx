@@ -1,3 +1,5 @@
+import PriceSelect from './PriceSelect'
+
 const PriceFilter = () => {
   return (
     <div className='selected-container price-filter-con'>
@@ -11,7 +13,7 @@ const PriceFilter = () => {
       </div>
       <div>
         <div className='slidebar'>
-          <input type='range' />
+          <input type='range' min={'min'} max={10000} />
         </div>
         <div className='slider-below'>
           <div className='slider-dot'>.</div>
@@ -27,22 +29,38 @@ const PriceFilter = () => {
         </div>
       </div>
       <div className='min-max-con'>
-        <div className='min-con'>
-          <select name='minimum' id='min'>
-            <option value='Min'>Min</option>
-            <option value='Min'>₹600</option>
-            <option value='Min'>₹1000</option>
-          </select>
-        </div>
-        <div className="to-con">to</div>
-        <div className='max-con'>
-          <select name='maximum' id='max'>
-            <option value='max'>₹10000+</option>
-            <option value='Min'>₹600</option>
-            <option value='Min'>₹1000</option>
-          </select>
-        </div>
-      </div> 
+        <PriceSelect
+          label='min'
+          id='min'
+          options={[
+            { label: 'Min', value: 0 },
+            { label: '₹600', value: 600 },
+            { label: '₹1000', value: 1000 },
+            { label: '₹1500', value: 1500 },
+            { label: '₹2000', value: 2000 },
+            { label: '₹2600', value: 2600 },
+            { label: '₹4000', value: 4000 },
+            { label: '₹7000', value: 7000 },
+            { label: '₹10000', value: 10000 }
+          ]}
+        />
+        <div className='to-con'>to</div>
+        <PriceSelect
+          label='max'
+          id='max'
+          options={[
+            { label: '₹600', value: 600 },
+            { label: '₹1000', value: 1000 },
+            { label: '₹1500', value: 1500 },
+            { label: '₹2000', value: 2000 },
+            { label: '₹2600', value: 2600 },
+            { label: '₹4000', value: 4000 },
+            { label: '₹7000', value: 7000 },
+            { label: '₹10000', value: 10000 },
+            { label: '+₹10000', value: 10000 }
+          ]}
+        />
+      </div>
     </div>
   )
 }

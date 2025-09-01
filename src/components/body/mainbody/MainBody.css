@@ -79,7 +79,7 @@
     font-size: 16px;
     margin-top: 8px;
     display: inline-block;
- 
+
 
 }
 
@@ -131,6 +131,7 @@
     background: #fff;
     background-color: #fff;
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* ----------------------------------------------------------- */
@@ -199,7 +200,6 @@
     padding-bottom: 5px;
     overflow: hidden;
     display: block;
-    letter-spacing: -.4px;
 }
 
 .card-brand {
@@ -264,7 +264,6 @@
     font-size: 16px;
     font-weight: 500;
     color: #212121;
-    font-family: 'bold';
 }
 
 .ori-price {
@@ -282,7 +281,6 @@
     font-weight: 500;
     display: inline-block;
     margin-left: 8px;
-    font-family: 'bold';
 }
 
 .bank-div {
@@ -295,4 +293,94 @@
     font-weight: 700;
     display: inline-flex;
     vertical-align: middle;
+}
+
+.few-left-div {
+    color: rgb(199, 0, 85) !important;
+    font-size: 12px !important;
+    padding: 5.5px;
+
+}
+
+/* --------------------------------------------------------------------------------- */
+
+.pagination-con {
+    display: block;
+    width: 100%;
+}
+
+.pagination-wrap {
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    line-height: 32px;
+}
+
+.pagination-nav {
+    padding: 4px 0;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+}
+
+.first-anchor {
+    background: #2874f0;
+    color: #fff;
+}
+
+.pagination-nav a {
+    display: inline-block;
+    padding: 0 8px;
+    cursor: pointer;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.next-anchor {
+    line-height: 32px;
+    color: #2874f0;
+}
+
+.pagination-span {
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+}
+
+.found-con {
+    margin: 10px 0 0;
+    display: block;
+    width: 100%;
+}
+
+.found-wrap {
+    background-color: #fff;
+    font-size: 14px;
+    padding: 16px;
+}
+
+.found {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.yes-no-div {
+    display: inline-block;
+    margin-left: 24px;
+    font-size: 16px;
+}
+.yes-no-div span{
+        border-radius: 2px;
+    border: 1px solid #d7d7d7;
+    padding: 6px 28px;
+    margin-right: 8px;
+    font-weight: 500;
+        font-size: 14px;
+    display: inline-block;
+    cursor: pointer;
 }

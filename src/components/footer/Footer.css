@@ -1,8 +1,12 @@
+.footer-con{
+    background-color: #f1f3f6;
+    padding-top: 25px;
+
+}
 .footer {
     background-color: #172337;
     min-width: 978px;
     border-top: 1px solid #ddd;
-    margin-top: 25px;
 }
 
 .footer-wrap {
@@ -86,8 +90,9 @@
 }
 .footer2-last2 {
        margin-bottom: 10px;
-    padding-left: 14px;
+    padding-left: 14px !important;
     border: none;
+    padding: 0;
 }
 
 
@@ -99,6 +104,9 @@
     margin: 0;
     padding: 0;
     line-height: normal;
+}
+.footer2-last-list-wrap p{
+    line-height: 1.5;
 }
 
 .social-con {
@@ -156,4 +164,7 @@
 .footer2-foot span{
         color: #fff;
     margin-left: 8px;
+}
+.footer2-foot p{
+    color: #ffff;
 }

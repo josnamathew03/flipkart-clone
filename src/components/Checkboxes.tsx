@@ -13,7 +13,7 @@ const Checkboxes = ({name,label, checked}: checkboxProps) => {
     <div className="checkbox-con">
       <label htmlFor="" className='checkbox-label'>
         <input type="checkbox" checked={checked} name={name}/>
-        <div className='custom-checkbox'></div>
+        <span className='custom-checkbox'></span>
         <span className='checkbox-text'>{label}</span>
       </label>
     </div>

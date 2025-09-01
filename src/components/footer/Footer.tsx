@@ -4,10 +4,12 @@ import Footer2 from './footer2/Footer2'
 
 const Footer = () => {
   return (
-    <div className="footer"> 
-      <div className='footer-wrap'>
-        <Footer1/>
-        <Footer2/>
+    <div className='footer-con'>
+      <div className='footer'>
+        <div className='footer-wrap'>
+          <Footer1 />
+          <Footer2 />
+        </div>
       </div>
     </div>
   )
