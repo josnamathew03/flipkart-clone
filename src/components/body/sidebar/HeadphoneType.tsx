@@ -4,29 +4,21 @@ import SidebarSections from './SidebarSections'
 const HeadphoneType = () => {
   return (
     <div className='price-filter-con '>
-      <SidebarSections text='Headphone Type'/>
+      <SidebarSections text='Headphone Type' />
       <div className='type-selection-con'>
         <div className='clear-all-con'>
           <div className='clear-cross'>✕</div>
           <div className='clear-all'>
             <span>Clear all</span>
           </div>
-          <Checkboxes
-            name='headphone-type'
-            checked={false}
-            label='True Wireless'
-          />
-          <Checkboxes
-            name='headphone-type'
-            checked={false}
-            label='In the Ear'
-          />
-          <Checkboxes
-            name='headphone-type'
-            checked={false}
-            label='On the Ear'
-          />
         </div>
+        <Checkboxes
+          name='headphone-type'
+          checked={false}
+          label='True Wireless'
+        />
+        <Checkboxes name='headphone-type' checked={false} label='In the Ear' />
+        <Checkboxes name='headphone-type' checked={false} label='On the Ear' />
       </div>
     </div>
   )

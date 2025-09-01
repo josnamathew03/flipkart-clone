@@ -8,18 +8,28 @@ body {
 }
 
 @font-face {
-  font-family: "regular";
+  font-family: "i-regular";
   src: url("./assets/font/Inter-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "bold";
+  font-family: "r-regular";
+  src: url("./assets/font/roboto-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "i-bold";
+  src: url("./assets/font/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "i-semi";
   src: url("./assets/font/Inter-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "italics";
-  src: url("./assets/font/roboto-regular.woff2") format("woff2");
+  font-family: "r-medium";
+  src: url("./assets/font/roboto-medium.woff2") format("woff2");
 }
 
 * {
@@ -39,11 +49,14 @@ img {
 body {
   font-size: 14px;
   font-weight: 400;
-  font-family: 'regular';
+  font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
+
+
   line-height: 1.4;
 }
 
+/* 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

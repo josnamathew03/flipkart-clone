@@ -18,7 +18,7 @@ const SidebarSections = ({text}: SidebarSectionsProps) => {
         >
           <path
             d='M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z'
-            fill='#212121'
+            
           ></path>
         </svg>
       </div>

@@ -35,8 +35,9 @@ const Footer2 = () => {
           <a href='/'>EPR Compliance</a>
         </div>
         <div className='footer2'>
-          <div className="">
-
+          <div className="footer2-last">
+            <div className="footer2-head">Mail Us:</div>
+            <div className="footer2-last-con"></div>
           </div>
         </div>
       </div>

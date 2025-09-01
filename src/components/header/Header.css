@@ -50,34 +50,33 @@
 .logo-wrap a {
 
     display: flex;
+    align-items: center;
 }
 
 .logo-anchor {
-    font-weight: 400;
-    font-family: 'italics';
-
+    /* font-weight: 400; */
+    font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
     font-size: 11px;
-
     font-style: italic;
     margin-top: -1px;
-    letter-spacing: .1px;
+    /* letter-spacing: .1px; */
 }
 
 .logo-wrap span {
-    font-family: 'italics';
+    font-family: Inter,-apple-system,Helvetica,Arial,sans-serif;
 
     color: #ffe500;
     font-weight: 500;
 
 
-    margin-right: 4px;
-    margin-left: 3px;
+    margin-right: 2px;
+   margin-left: 3px;
 
 }
 
-img {
+/* img {
     line-height: 0;
-}
+} */
 
 .search-container {
     display: flex;
@@ -116,16 +115,17 @@ img {
 }
 
 .input-wrap input {
-    font-family: 'regular';
+    /* font-family: 'i-regular'; */
+
     border-radius: 2px 0 0 2px;
     border: 0;
 
     outline: 0 none;
-    /* font-size: 14px; */
+    font-size: 14px;
     height: 36px;
     width: 100%;
     padding: 0 16px;
-    letter-spacing: -.031px;
+    /* letter-spacing: -.48px; */
     display: inline-block;
 }
 /* .search-spacer{
@@ -152,14 +152,15 @@ img {
     max-width: 150px;
     display: flex;
     justify-content: flex-end;  
-    font-family: 'bold';
+    /* font-family: 'r-regular'; */
+    font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
     line-height: 20px;
-    /* font-size: 16px; */
-    /* letter-spacing: .1px; */
+    font-size: 16px;
+    letter-spacing: .1px;
     display: flex;
     align-items: center;
-        font-size: 15.5px;
-    letter-spacing: -.05px;
+        /* font-size: 15.5px;
+    letter-spacing: -.05px; */
 }
 
 .login-container {
@@ -201,8 +202,8 @@ img {
 .cart-wrap svg {
     width: 16px;
     height: 16px;
-    margin: 0 7.7px;
-    margin-bottom: -2px;
+    margin: 0 8px;
+    margin-bottom: -3px;
 }
 
 .header-nav-container {
@@ -231,9 +232,10 @@ img {
     justify-content: center;
     font-weight: 500;
     height: 100%;
+        font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
     align-items: center;
-    font-family: 'bold';
-    letter-spacing: -0.35px;
+    /* font-family: 'i-semi'; */
+    /* letter-spacing: -0.35px; */
 }
 
 .nav-span svg {
