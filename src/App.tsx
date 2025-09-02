@@ -1,18 +1,23 @@
-import React from 'react';
+import React from 'react'
 
-import Header from './components/header/Header';
-import './App.css';
-import Body from './components/body/Body';
-import Footer from './components/footer/Footer';
+import Header from './components/header/Header'
+import './App.css'
+import Body from './components/body/Body'
+import Footer from './components/footer/Footer'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <Header/>
-      <Body/>
-      <Footer/>
+    <div className='App'>
+      <div className='desktop'>
+        <Header />
+        <Body />
+        <Footer />
+      </div>
+      <div className='mobile'> 
+
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
