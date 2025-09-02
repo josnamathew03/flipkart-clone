@@ -1,6 +1,44 @@
-import PriceSelect from './PriceSelect'
+import { useState, useContext, useEffect } from 'react'
+import PriceSelect, { option } from './PriceSelect'
+import { ProductContext } from '../ProductsProvider'
 
 const PriceFilter = () => {
+  const [min, setMin] = useState(0)
+  const [max, setMax] = useState(10000)
+
+  const ctx = useContext(ProductContext)
+
+  const { setPriceRange } = ctx
+
+  useEffect(() => {
+    setPriceRange(min, max)
+    console.log(min, max)
+  }, [min, max])
+
+  let minOption: option[]
+
+  if (max === 1000) {
+    minOption = [
+      { label: 'Min', value: 0 },
+      { label: '₹600', value: 600 }
+    ]
+  } else if (max === 1500) {
+    minOption = [
+      { label: 'Min', value: 0 },
+      { label: '₹600', value: 600 },
+      { label: '₹1000', value: 1000 }
+    ]
+  }
+  else if (max === 2000) {
+    minOption = [
+      { label: 'Min', value: 0 },
+      { label: '₹600', value: 600 },
+      { label: '₹1000', value: 1000 },
+      { label: '₹1500', value: 1500 }
+
+    ]
+  }
+
   return (
     <div className='selected-container price-filter-con'>
       <div className='selected-heading-wrap price-heading-wrap'>
@@ -32,33 +70,38 @@ const PriceFilter = () => {
         <PriceSelect
           label='min'
           id='min'
-          options={[
-            { label: 'Min', value: 0 },
-            { label: '₹600', value: 600 },
-            { label: '₹1000', value: 1000 },
-            { label: '₹1500', value: 1500 },
-            { label: '₹2000', value: 2000 },
-            { label: '₹2600', value: 2600 },
-            { label: '₹4000', value: 4000 },
-            { label: '₹7000', value: 7000 },
-            { label: '₹10000', value: 10000 }
-          ]}
+          value={min}
+          onChange={setMin}
+          options={minOption}
         />
         <div className='to-con'>to</div>
         <PriceSelect
           label='max'
           id='max'
-          options={[
-          
-            { label: '₹1000', value: 1000 },
-            { label: '₹1500', value: 1500 },
-            { label: '₹2000', value: 2000 },
-            { label: '₹2600', value: 2600 },
-            { label: '₹4000', value: 4000 },
-            { label: '₹7000', value: 7000 },
-            { label: '₹10000', value: 10000 },
-            { label: '+₹10000', value: 10000 }
-          ]}
+          value={max}
+          onChange={setMax}
+          options={
+            min === 1000
+              ? [
+                  { label: '₹1500', value: 1500 },
+                  { label: '₹2000', value: 2000 },
+                  { label: '₹2600', value: 2600 },
+                  { label: '₹4000', value: 4000 },
+                  { label: '₹7000', value: 7000 },
+                  { label: '₹10000', value: 10000 },
+                  { label: '+₹10000', value: 10000 }
+                ]
+              : [
+                  { label: '₹1000', value: 1000 },
+                  { label: '₹1500', value: 1500 },
+                  { label: '₹2000', value: 2000 },
+                  { label: '₹2600', value: 2600 },
+                  { label: '₹4000', value: 4000 },
+                  { label: '₹7000', value: 7000 },
+                  { label: '₹10000', value: 10000 },
+                  { label: '+₹10000', value: 10000 }
+                ]
+          }
         />
       </div>
     </div>

@@ -1,20 +1,43 @@
-type option ={
-    label: string
-    value: number
+import { useContext } from 'react'
+import { ProductContext } from '../ProductsProvider'
+
+export type option = {
+  label: string
+  value: number
 }
-type PriceSelectType ={
-    id: string
-    label: string
-    options : option[]
+type PriceSelectType = {
+  id: string
+  label: string
+  value: number
+  onChange: (val: number) => void
+  options: option[]
 }
 
-const PriceSelect = ({id,label,options}: PriceSelectType) => {
+const PriceSelect = ({
+  id,
+  label,
+  value,
+  onChange,
+  options
+}: PriceSelectType) => {
+  const handleChnage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newVal = Number(e.target.value)
+    onChange(newVal)
+  }
+
   return (
-     <div className='min-con'>
-          <select name={label} id={id}>
-            {options.map((opt,i)=>(<option value={opt.value} key={i}>{opt.label}</option>))}
-          </select>
-        </div>
+    <div className='min-con'>
+      <select name={label} id={id} onChange={handleChnage} value={value}>
+        {options.map((opt, i) => {
+        
+          return (
+            <option value={opt.value} key={i}>
+              {opt.label}
+            </option>
+          )
+        })}
+      </select>
+    </div>
   )
 }
 
