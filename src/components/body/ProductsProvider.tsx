@@ -43,14 +43,17 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }
 
   const setRatings = (values: number[]) => {
-    if (values.length === 0) return; 
-    setFiltered( 
-       products.filter(p => values.some(v=>p.stars.star >= v))
-    )
+    const rate = values.map(v => `${v}★ & above`)
+
+    if (values.length === 0) return
+    setFiltered(products.filter(p => values.some(v => p.stars.star >= v)))
+
+    setSelectedFilters(rate)
   }
 
   const clearFilters = () => {
     setSelectedFilters([])
+    setFiltered([])
   }
 
   const removeFilter = (filter: string) => {
@@ -62,6 +65,10 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       .then((data: productType[]) => setProducts(data))
       .catch(err => console.log(' error ', err))
   }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [filtered])
 
   return (
     <ProductContext.Provider
