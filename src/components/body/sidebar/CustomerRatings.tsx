@@ -9,12 +9,14 @@ const CustomerRatings = () => {
   const [checked,setChecked] = useState<number[]>([])
 
   const handleChange = (value:number)=>{
-   setChecked(prev=>
-    prev.includes(value)?
+   setChecked(prev=>{
+    const updated = prev.includes(value)?
      prev.filter(f=>(f != value))
      : [...prev, value]
-   )
-   setRatings(value)
+   
+   setRatings(updated)
+   return updated;
+  })
 
   }
   return (

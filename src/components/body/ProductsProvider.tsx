@@ -9,8 +9,8 @@ type ProductsContextType = {
   setPriceRange: (min: number, max: number) => void
   selectedFilters: string[]
   clearFilters: () => void
-  removeFilter:(filter: string)=>void
-  setRatings : (value: number) => void
+  removeFilter: (filter: string) => void
+  setRatings: (values: number[]) => void
   //   addFilter: (filter: string) => void
 }
 
@@ -20,8 +20,8 @@ export const ProductContext = createContext<ProductsContextType>({
   setPriceRange: () => {},
   selectedFilters: [],
   clearFilters: () => {},
-  removeFilter: (filter:string)=> {},
-  setRatings: (value: number) => {}
+  removeFilter: (filter: string) => {},
+  setRatings: (values: number[]) => {}
 
   //   addFilter: ()=>{}
 })
@@ -42,16 +42,19 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
-  const setRatings = (value: number) =>{
-    setFiltered(prev=> prev.length > 0 ? prev.filter(p=> p.stars.star> value) : products.filter(p=> p.stars.star> value))
+  const setRatings = (values: number[]) => {
+    if (values.length === 0) return; 
+    setFiltered( 
+       products.filter(p => values.some(v=>p.stars.star >= v))
+    )
   }
 
   const clearFilters = () => {
     setSelectedFilters([])
   }
 
-  const removeFilter = (filter: string)=>{
-        setSelectedFilters(prev=> prev.filter(f=>( f !== filter)))
+  const removeFilter = (filter: string) => {
+    setSelectedFilters(prev => prev.filter(f => f !== filter))
   }
   useEffect(() => {
     fetch('/data/products.json')
