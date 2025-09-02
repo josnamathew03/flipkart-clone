@@ -16,9 +16,10 @@ const HeadphoneType = () => {
           name='headphone-type'
           checked={false}
           label='True Wireless'
+          value={'wireless'}
         />
-        <Checkboxes name='headphone-type' checked={false} label='In the Ear' />
-        <Checkboxes name='headphone-type' checked={false} label='On the Ear' />
+        <Checkboxes name='headphone-type' value={'inear'} checked={false} label='In the Ear' />
+        <Checkboxes name='headphone-type' value={'onear'} checked={false} label='On the Ear' />
       </div>
     </div>
   )

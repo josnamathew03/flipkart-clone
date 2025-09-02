@@ -8,8 +8,10 @@ type ProductsContextType = {
   filtered: productType[]
   setPriceRange: (min: number, max: number) => void
   selectedFilters: string[]
-//   addFilter: (filter: string) => void
-
+  clearFilters: () => void
+  removeFilter:(filter: string)=>void
+  setRatings : (value: number) => void
+  //   addFilter: (filter: string) => void
 }
 
 export const ProductContext = createContext<ProductsContextType>({
@@ -17,25 +19,40 @@ export const ProductContext = createContext<ProductsContextType>({
   filtered: [],
   setPriceRange: () => {},
   selectedFilters: [],
-//   addFilter: ()=>{}
+  clearFilters: () => {},
+  removeFilter: (filter:string)=> {},
+  setRatings: (value: number) => {}
+
+  //   addFilter: ()=>{}
 })
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<productType[]>([])
   const [filtered, setFiltered] = useState<productType[]>([])
-  const [selectedFilters,setSelectedFilters] = useState<string[]>([])
-
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
   const setPriceRange = (min: number, max: number) => {
     setFiltered(products.filter(p => p.price >= min && p.price <= max))
-    const filter = `₹${min}-₹${max}`
-    setSelectedFilters((prev)=>{
-        const withoutPrice = prev.filter(f=>!f.includes('₹'))
-        return [...withoutPrice,filter]
-  })
+    if (min !== 0 || max !== 10000) {
+      const filter = `₹${min}-₹${max}`
+      setSelectedFilters(prev => {
+        const withoutPrice = prev.filter(f => !f.includes('₹'))
+        return [...withoutPrice, filter]
+      })
+    }
   }
 
+  const setRatings = (value: number) =>{
+    setFiltered(prev=> prev.length > 0 ? prev.filter(p=> p.stars.star> value) : products.filter(p=> p.stars.star> value))
+  }
 
+  const clearFilters = () => {
+    setSelectedFilters([])
+  }
+
+  const removeFilter = (filter: string)=>{
+        setSelectedFilters(prev=> prev.filter(f=>( f !== filter)))
+  }
   useEffect(() => {
     fetch('/data/products.json')
       .then(res => res.json())
@@ -44,7 +61,17 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }, [])
 
   return (
-    <ProductContext.Provider value={{ products, filtered, setPriceRange , selectedFilters}}>
+    <ProductContext.Provider
+      value={{
+        products,
+        filtered,
+        setPriceRange,
+        selectedFilters,
+        clearFilters,
+        removeFilter,
+        setRatings
+      }}
+    >
       {children}
     </ProductContext.Provider>
   )

@@ -4,7 +4,7 @@ import { ProductContext } from '../ProductsProvider'
 
 const SelectedFilters = () => {
   const ctx = useContext(ProductContext)
-  const {selectedFilters} = ctx
+  const {selectedFilters, clearFilters, removeFilter} = ctx
 
   return (
     <div className='selected-container'>
@@ -12,7 +12,7 @@ const SelectedFilters = () => {
         <div className='selected-heading'>
           <span>Filters</span>
         </div>
-        <div className='clear-container' >
+        <div className='clear-container' onClick={clearFilters}>
           <span >Clear all</span>
         </div>
       </div>
@@ -26,7 +26,7 @@ const SelectedFilters = () => {
           <SelectedEach cat='4★ & above' />
           <SelectedEach cat='4★ & above' /> */}
           {
-            selectedFilters.map(filter=>(<SelectedEach cat={filter}/>))
+            selectedFilters.map(filter=>(<SelectedEach cat={filter} remove={()=>removeFilter(filter)}/>))
           }
 
 
