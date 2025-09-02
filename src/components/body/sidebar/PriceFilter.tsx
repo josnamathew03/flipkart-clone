@@ -15,30 +15,27 @@ const PriceFilter = () => {
     console.log(min, max)
   }, [min, max])
 
-  let minOption: option[]
 
-  if (max === 1000) {
-    minOption = [
-      { label: 'Min', value: 0 },
-      { label: '₹600', value: 600 }
-    ]
-  } else if (max === 1500) {
-    minOption = [
-      { label: 'Min', value: 0 },
-      { label: '₹600', value: 600 },
-      { label: '₹1000', value: 1000 }
-    ]
-  }
-  else if (max === 2000) {
-    minOption = [
-      { label: 'Min', value: 0 },
-      { label: '₹600', value: 600 },
-      { label: '₹1000', value: 1000 },
-      { label: '₹1500', value: 1500 }
 
-    ]
+  const minOptions = (max: number): option[]=>{
+    const base = [0,600,1000,1500,2000,2600,4000,7000,10000]
+    
+    return base.filter(each=>(each<max)
+  ).map(each=>({
+    label: each === 0? 'min' :`₹${each}`,
+    value: each
+  }))
   }
 
+  const maxOptions = (min: number): option[]=>{
+    const base = [1000,1500,2000,2600,4000,7000,10000]
+    
+    return base.filter(each=>(each>min)
+  ).map(each=>({
+    label: each === 0? 'min' :`₹${each}`,
+    value: each
+  }))
+  }
   return (
     <div className='selected-container price-filter-con'>
       <div className='selected-heading-wrap price-heading-wrap'>
@@ -72,7 +69,7 @@ const PriceFilter = () => {
           id='min'
           value={min}
           onChange={setMin}
-          options={minOption}
+          options={minOptions(max)}
         />
         <div className='to-con'>to</div>
         <PriceSelect
@@ -80,28 +77,7 @@ const PriceFilter = () => {
           id='max'
           value={max}
           onChange={setMax}
-          options={
-            min === 1000
-              ? [
-                  { label: '₹1500', value: 1500 },
-                  { label: '₹2000', value: 2000 },
-                  { label: '₹2600', value: 2600 },
-                  { label: '₹4000', value: 4000 },
-                  { label: '₹7000', value: 7000 },
-                  { label: '₹10000', value: 10000 },
-                  { label: '+₹10000', value: 10000 }
-                ]
-              : [
-                  { label: '₹1000', value: 1000 },
-                  { label: '₹1500', value: 1500 },
-                  { label: '₹2000', value: 2000 },
-                  { label: '₹2600', value: 2600 },
-                  { label: '₹4000', value: 4000 },
-                  { label: '₹7000', value: 7000 },
-                  { label: '₹10000', value: 10000 },
-                  { label: '+₹10000', value: 10000 }
-                ]
-          }
+          options={ maxOptions(min)}
         />
       </div>
     </div>

@@ -1,30 +1,33 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import SelectedEach from './SelectedEach'
+import { ProductContext } from '../ProductsProvider'
 
 const SelectedFilters = () => {
-  const [filters, setFilters] = useState([])
-  const handleClear = ()=>{
-    setFilters([])
-  }
+  const ctx = useContext(ProductContext)
+  const {selectedFilters} = ctx
+
   return (
     <div className='selected-container'>
       <div className='selected-heading-wrap'>
         <div className='selected-heading'>
           <span>Filters</span>
         </div>
-        <div className='clear-container' onClick={handleClear}>
+        <div className='clear-container' >
           <span >Clear all</span>
         </div>
       </div>
       <div className='selected-items'>
         <div className='selected-items-wrap'>
-          <SelectedEach cat='3★ & above'/>
+          {/* <SelectedEach cat='3★ & above'/>
 
           <SelectedEach cat='Bluetooth' />
           <SelectedEach cat='True Wireless' />
 
           <SelectedEach cat='4★ & above' />
-          <SelectedEach cat='4★ & above' />
+          <SelectedEach cat='4★ & above' /> */}
+          {
+            selectedFilters.map(filter=>(<SelectedEach cat={filter}/>))
+          }
 
 
         </div>
