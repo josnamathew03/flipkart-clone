@@ -6,6 +6,7 @@ import Body from './components/body/Body'
 import Footer from './components/footer/Footer'
 import HeaderM from './mobileComponent/headerM/HeaderM'
 import BodyM from './mobileComponent/bodyM/BodyM'
+import ProductsProvider from './components/body/ProductsProvider'
 
 function App () {
   return (
@@ -15,10 +16,11 @@ function App () {
         <Body />
         <Footer />
       </div>
-      <div className='mobile'> 
-          <HeaderM/>
-          <BodyM/>
-
+      <div className='mobile'>
+        <ProductsProvider>
+          <HeaderM />
+          <BodyM />
+        </ProductsProvider>
       </div>
     </div>
   )

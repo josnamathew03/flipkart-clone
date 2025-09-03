@@ -1,65 +1,264 @@
-.body-m{
+.body-m {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-shrink: 0;
     flex-basis: auto;
 }
-.des-con{
+
+.des-con {
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
-.des-wrap{
-    
+
+.des-wrap {
+
 
     color: rgba(102, 102, 102, 1);
     max-width: 100%;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   letter-spacing: 0.5px;
-   font-size: 12px;
-   line-height: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    line-height: 16px;
 
-   overflow: hidden;
+    overflow: hidden;
 }
-.read-container{
+
+.read-container {
 
     width: 100%;
     color: #2A55E5;
 }
-.border{
+
+.border {
     height: 1px;
+    width: 100%;
     background-color: rgb(234, 234, 234);
 }
-.ad-container{
+
+.ad-container {
     height: 242px;
     max-width: 100%;
     white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
+    margin-bottom: 1.35px;
+
 }
-.ad-container::-webkit-scrollbar{
+
+.ad-container::-webkit-scrollbar {
     display: none;
 }
-.ad-container img{
+
+.ad-container img {
     height: 100%;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
 
-.card-row-m{
+.card-row-m {
     display: flex;
     flex-basis: auto;
     flex-shrink: 0;
 }
-.card-seperator{
+
+.card-seperator {
     width: 1px;
-    background-color:rgb(234, 234, 234);
+    background-color: rgb(234, 234, 234);
 }
-.card-m{
+
+.card-m {
     height: 100%;
     display: flex;
-    flex-grow: 1;
+    width: 50%;
+}
+
+.card-m-wrap {
+    padding-bottom: 8px;
     min-height: 216px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-basis: auto;
+
+
+}
+
+.image-con-m {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.image-wrap-m {
+    display: flex;
+    height: 225px;
+}
+
+.image-con-m img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+}
+
+.card-des-m {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 8px 4px 8px 12px;
+    display: flex;
+    flex-basis: auto;
+    flex-shrink: 0;
+
+}
+
+.brand-wrap-m {
+    margin-right: 6px;
+    height: 18px;
+    width: 100%;
+
+}
+
+.brand-wrap-m a {
+    color: rgb(17, 17, 18);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'i-semi';
+    letter-spacing: -0.01px;
+    max-width: 100%;
+}
+
+.card-name-anchor {
+    margin-right: 6px;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 8px;
+    padding-bottom: 2px;
+}
+
+.card-name-m {
+    color: rgb(113, 116, 120);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-regular';
+    letter-spacing: 0px;
+    margin-right: 4px;
+    flex: 1 1 0%;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.price-con-m {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.dis-con-m {
+    margin-right: 4px;
+    display: flex;
+    font-family: 'i-semi';
+    align-items: center;
+
+}
+
+.dis-con-m .dis-div {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'i-semi';
+    letter-spacing: -0.01px;
+    color: rgb(0, 140, 0);
+}
+
+.ori-price-con {
+    font-family: 'i-semi';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    color: rgb(113, 116, 120);
+    text-decoration-line: line-through;
+}
+
+.price-con-m {
+    font-family: 'i-semi';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.01px;
+    color: rgb(17, 17, 18);
+}
+
+.offer-con-m {
+    margin-top: 6px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+}
+
+.wow {
+    display: inline-flex;
+    position: relative;
+    margin-right: 2px;
+    align-self: center;
+    width: 38px;
+    height: 16px;
+}
+
+.wow img {
+    object-fit: contain;
+}
+
+.offer-money {
+    font-size: 12px;
+    color: rgb(6, 31, 128);
+    font-family: 'r-regular';
+    font-style: normal;
+}
+
+.offer-text {
+
+    font-size: 12px;
+    color: rgb(6, 31, 128);
+    font-style: normal;
+}
+
+.assuref-m {
+    flex-direction: row;
+    flex: 1 1 0%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex
+}
+
+.assured-m {
+    flex-direction: row;
+    flex: 1 1 0%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+        display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.assured-img {
+    display: flex;
+
+    position: relative;
+    width: 60px;
+    height: 16px;
 }

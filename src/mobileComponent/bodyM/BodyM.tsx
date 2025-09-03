@@ -18,10 +18,11 @@ const BodyM = () => {
         <div className="read-container">
           <span>Read More</span>
         </div>
-        <div className='border'></div>
+        {/* <div className='border'></div> */}
       </div>
       <div className='ad-container'>
         <img src="https://rukminim2.flixcart.com/fk-p-flap/750/484/image/Mask%20Group-2.png?q=60" alt="" />
+        
       </div>
       <CardRowM/>
     </div>
