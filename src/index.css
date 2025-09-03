@@ -14,7 +14,7 @@ body {
 
 @font-face {
   font-family: "r-regular";
-  src: url("./assets/font/roboto-regular.woff2") format("woff2");
+  src: url("./assets/font/roboto-regular-m.woff2") format("woff2");
 }
 
 @font-face {
@@ -46,7 +46,7 @@ img {
   outline: none;
 }
 
-body {
+.desktop {
   font-size: 14px;
   font-weight: 400;
   font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;

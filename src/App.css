@@ -1,6 +1,17 @@
 @media screen and (max-width: 768px) {
-.desktop{
-    display: none;
-}
-}
+    .desktop {
+        display: none;
+    }
+    .mobile{
+        display: flex;
+        flex-direction: column;
+    }
 
+    body {
+        font-family:
+            'r-regular', Arial, sans-serif;
+            font-size: 12px;
+            height: 100%;
+     
+    }
+}
