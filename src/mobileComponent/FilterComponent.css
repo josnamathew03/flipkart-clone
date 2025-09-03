@@ -1,0 +1,12 @@
+.filter-com-wrap{
+  position: fixed;
+  background: #fff;
+  z-index: 99;
+  height: 100dvh;
+  width: 100vw;
+}
+.filter-header{
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+}

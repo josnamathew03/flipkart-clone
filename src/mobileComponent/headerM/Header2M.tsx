@@ -1,6 +1,13 @@
+import { useState } from "react"
+import FilterComponent from "../FilterComponent"
 
 
 const Header2M = () => {
+  const [showFilter,setShowFilter] = useState(false)
+
+  const handleClick = ()=>{
+    setShowFilter(true)
+  }
   return (
     <div className='header2-m'>
       <div className='sort-wrap'>
@@ -20,7 +27,7 @@ const Header2M = () => {
         </div>
       </div>
       <div className='seperator'></div>
-      <div className='sort-wrap'>
+      <div className='sort-wrap' onClick={handleClick}>
         <div className='sort-div'>
           <div className='filter-svg'>
             <svg width='20' height='20' viewBox='0 0 256 256'>
@@ -67,6 +74,9 @@ const Header2M = () => {
           <div className='sort'>Filter</div>
         </div>
       </div>
+      {
+        showFilter && <FilterComponent/>
+      }
     </div>
   )
 }
