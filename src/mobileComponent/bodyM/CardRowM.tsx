@@ -7,9 +7,11 @@ const CardRowM = () => {
     const {products} = ctx
   return (
     <div className="card-row-m">
-      <CardM/>
+      {/* <CardM/>
         <div className="card-seperator"></div>
       <CardM/>
+     */}
+     {products.map(product=>(<CardM key={product.id} {...product}/>))}
 
     </div>
   )

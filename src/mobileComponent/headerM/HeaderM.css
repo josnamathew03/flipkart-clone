@@ -100,6 +100,8 @@
     border-right: 0;
     border-style: solid;
     background-color: rgb(255, 255, 255);
+    /* position: sticky;
+    top:52px; */
 }
 .sort-wrap{
     flex: 1 1 0%;
@@ -157,4 +159,34 @@
 .header3-m{
     height: 56px;
     padding-right: 11px;
+    padding-left: 11px;
+    align-items: center;
+    justify-content: space-between;
+}
+.offer-nav{
+    border: 1px solid rgba(219, 210, 219 );
+    padding-left: 4px;
+    padding-right: 8px;
+    margin: 8px 4px 0 4px;
+    height: 40px;
+    /* justify-content: space-between; */
+    display: flex;
+    
+    
+}
+.offer-icon{
+    margin-right: 4px;
+    width: 32px;
+    height: 32px;
+        border-radius: 14px;
+    overflow: hidden;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.offer-text-m{
+    -webkit-line-clamp: 2;
+    max-width: 100%;
+    text-overflow: ellipsis;
+
 }

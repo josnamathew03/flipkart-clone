@@ -16,6 +16,8 @@ const Card = ({
 
 
 }: productType) => {
+    const dis = Math.floor(((original-price) / original) * 100)
+
  
 
   return (
@@ -86,7 +88,7 @@ const Card = ({
             <div className="price-now">₹{price}</div>
             <div className="ori-price">₹{original}</div>
             <div className="off-div">
-                <span>72% off</span>
+                <span>{dis}% off</span>
             </div>
         </a>
         {

@@ -1,7 +1,23 @@
+import { productType } from "../../types/productType"
 
 
 
-const CardM = () => {
+const CardM = ({
+  id,
+  image,
+  sponsored,
+  name,
+  brand,
+  stars,
+  flipAssured,
+  price,
+  original,
+  bankOffer,
+  left
+
+
+}: productType) => {
+    const dis = Math.floor(((original-price) / original) * 100)
 
   return (
     <div className='card-m'>
@@ -9,18 +25,18 @@ const CardM = () => {
         <div className='image-con-m'>
           <div className='image-wrap-m'>
             <img
-              src='https://rukminim2.flixcart.com/image/376/450/xif0q/headphone/l/p/s/pixel-buds-pro-with-active-noise-cancellation-google-original-imah3zxznz2strfn.jpeg?q=60&crop=false'
+              src={image}
               alt=''
             />
           </div>
         </div>
         <div className='card-des-m'>
           <div className='brand-wrap-m'>
-            <a href='/'>Google</a>
+            <a href='/'>{brand}</a>
           </div>
           <a href='/' className='card-name-anchor'>
             <div className='card-name-m'>
-              Pixel Buds Pro with Active Noise Cancellation Bluetooth Headset
+              {name}
             </div>
           </a>
           <div className='price-con-m'>
@@ -31,13 +47,13 @@ const CardM = () => {
                   fill='#008C00'
                 ></path>
               </svg>
-              <div className='dis-div'>48%</div>
+              <div className='dis-div'>{dis}%</div>
             </div>
             <div className='ori-price-con dis-con-m'>
-              <div>₹19,900</div>
+              <div>₹{original}</div>
             </div>
             <div className='price-con-m'>
-              <div>₹10,189</div>
+              <div>₹{price}</div>
             </div>
           </div>
           <div className="offer-con-m">
