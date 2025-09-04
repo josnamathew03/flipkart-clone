@@ -5,7 +5,7 @@ type checkboxProps ={
     name:string
     label: string
     checked: boolean
-    value: number | string
+    value: number | string 
     handleChange?: (e: React.ChangeEvent<HTMLInputElement>)=> void
     
 }

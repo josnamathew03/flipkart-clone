@@ -1,12 +1,74 @@
-.filter-com-wrap{
-  position: fixed;
-  background: #fff;
-  z-index: 99;
-  height: 100dvh;
-  width: 100vw;
+.filter-com-wrap {
+    position: fixed;
+    background: #fff;
+    z-index: 99;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
 }
-.filter-header{
+
+.filter-header {
     min-height: 52px;
     display: flex;
     align-items: center;
+}
+
+.filter-head-m {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-head-m h1 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.filter-head-m span {
+    padding-right: 20px;
+}
+
+.filter-body {
+    display: flex;
+}
+
+.filter-type-selection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-selection {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.each-type{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(232, 220, 220);
+    background-color: rgba(241, 243, 246, 1.00);
+}
+.filter-apply-btn{
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 10px;
+}
+.apply-btn{
+    display: flex;
+        background-color: rgb(255, 88, 0);
+        min-height: 40px;
+        align-items: center;
+        border-radius: 2px;
+        padding: 0 65px;
+        border: 0;
+        color: #fff;
+
+}
+.rating-checkbox, .price-checkbox{
+    padding: 0px 20px;
 }

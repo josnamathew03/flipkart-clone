@@ -4,14 +4,14 @@ import { ProductContext } from "../../components/body/ProductsProvider"
 
 const CardRowM = () => {
       const ctx = useContext(ProductContext)
-    const {products} = ctx
+    const {products,filtered} = ctx
   return (
     <div className="card-row-m">
       {/* <CardM/>
         <div className="card-seperator"></div>
       <CardM/>
      */}
-     {products.map(product=>(<CardM key={product.id} {...product}/>))}
+     {(filtered.length === 0? products : filtered ).map(product=>(<CardM key={product.id} {...product}/>))}
 
     </div>
   )

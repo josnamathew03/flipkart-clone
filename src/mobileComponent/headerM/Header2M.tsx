@@ -75,7 +75,7 @@ const Header2M = () => {
         </div>
       </div>
       {
-        showFilter && <FilterComponent/>
+        showFilter && <FilterComponent showFilter={showFilter} setShowFilter={setShowFilter}/>
       }
     </div>
   )

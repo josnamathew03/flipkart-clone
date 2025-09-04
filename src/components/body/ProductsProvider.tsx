@@ -10,8 +10,12 @@ type ProductsContextType = {
   selectedFilters: string[]
   clearFilters: () => void
   removeFilter: (filter: string) => void
-  setRatings: (values: number[]) => void
-  //   addFilter: (filter: string) => void
+  // setRatings: (values: number[]) => void
+  setFiltered: (arr: productType[]) => void
+  checked: number[]
+  toggleRating: (value: number) => void
+  priceChecked : number[],
+  togglePrice: (value: string) => void
 }
 
 export const ProductContext = createContext<ProductsContextType>({
@@ -21,15 +25,49 @@ export const ProductContext = createContext<ProductsContextType>({
   selectedFilters: [],
   clearFilters: () => {},
   removeFilter: (filter: string) => {},
-  setRatings: (values: number[]) => {}
-
-  //   addFilter: ()=>{}
+  // setRatings: (values: number[]) => {},
+  checked: [],
+  toggleRating: (value: number) => {},
+  setFiltered: (arr: productType[]) => {},
+  priceChecked: [],
+  togglePrice: (value:string) => {}
 })
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<productType[]>([])
   const [filtered, setFiltered] = useState<productType[]>([])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
+  const [checked, setChecked] = useState<number[]>([])
+  const [priceChecked, setPriceChecked] = useState<number[]>([])
+  
+  const togglePrice = (value: string) =>{
+      console.log(value)
+
+    const [v1,v2] = value.split(',').map(Number)
+      console.log(v1,v2)
+
+   
+    setPriceChecked(prev=>{
+      const exists = prev.includes(v1) && prev.includes(v2)
+      const updated =  exists?  prev.filter(f => f!== v1 && f!== v2 ) : [...prev,v1,v2]
+      console.log(updated)
+      const [min,max] =  [Math.min(...updated), Math.max(...updated)];
+      setPriceRange(min,max)
+      return updated
+    })
+  }
+  
+
+  const toggleRating = (value: number) => {
+    setChecked(prev => {
+      const updated = prev.includes(value)
+        ? prev.filter(f => f != value)
+        : [...prev, value]
+
+      setRatings(updated)
+      return updated
+    })
+  }
 
   const setPriceRange = (min: number, max: number) => {
     setFiltered(products.filter(p => p.price >= min && p.price <= max))
@@ -79,7 +117,12 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         selectedFilters,
         clearFilters,
         removeFilter,
-        setRatings
+        // setRatings,
+        checked,
+        toggleRating,
+        setFiltered,
+        priceChecked,
+        togglePrice
       }}
     >
       {children}
