@@ -5,6 +5,7 @@
     .mobile{
         display: flex;
         flex-direction: column;
+        max-width: 100vw;
     }
 
     body {
@@ -14,4 +15,5 @@
             height: 100%;
      
     }
+    
 }

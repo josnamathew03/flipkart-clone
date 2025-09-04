@@ -71,6 +71,9 @@ const CardM = ({
           </div>
         </div>
       </div>
+      <div className="like-btn-m">
+        <svg width="24" height="24" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path d="M128 216S28 160 28 92a52 52 0 0 1 100-20h0a52 52 0 0 1 100 20c0 68-100 124-100 124Z" fill="#fff" stroke="#B8BBBF" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path></svg>
+      </div>
     </div>
   )
 }

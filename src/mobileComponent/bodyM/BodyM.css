@@ -301,6 +301,7 @@
     display: flex;
     width: 50%;
     white-space: normal;
+    position: relative;
 }
 
 .card-m:not(:nth-child(2n)) {
@@ -314,6 +315,14 @@
     width: 100%;
     flex-direction: column;
     flex-basis: auto;
+}
+.like-btn-m{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .image-con-m {

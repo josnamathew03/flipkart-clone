@@ -1,5 +1,7 @@
 .header-m {
     height: 156px;
+    position: relative;
+    
 
 }
 
@@ -10,6 +12,11 @@
     flex-shrink: 0;
     align-items: stretch;
     background-color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 99;
+right: 0;
+left: 0;
+    top: 0;
 
 }
 
@@ -23,6 +30,7 @@
     width: 100%;
     min-height: 52px;
     align-items: center;
+   
 
 }
 
@@ -98,14 +106,15 @@
     align-items: center;
     justify-content: center;
     border-color: rgb(213, 215, 219);
-    ;
     border-bottom-width: 1px;
     border-left: 0;
     border-right: 0;
     border-style: solid;
     background-color: rgb(255, 255, 255);
-    /* position: sticky;
-    top:52px; */
+         /* position: sticky;
+    top: 59px;
+    z-index: 99; */
+
 }
 
 .sort-wrap {
