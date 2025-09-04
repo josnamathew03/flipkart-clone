@@ -11,7 +11,6 @@ type ProductsContextType = {
   clearFilters: () => void
   removeFilter: (filter: string) => void
   // setRatings: (values: number[]) => void
-  setFiltered: (arr: productType[]) => void
   checked: number[]
   toggleRating: (value: number) => void
   priceChecked: number[]
@@ -28,7 +27,7 @@ export const ProductContext = createContext<ProductsContextType>({
   // setRatings: (values: number[]) => {},
   checked: [],
   toggleRating: (value: number) => {},
-  setFiltered: (arr: productType[]) => {},
+
   priceChecked: [],
   togglePrice: (value: string) => {}
 })
@@ -93,6 +92,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const clearFilters = () => {
     setSelectedFilters([])
+    setChecked([])
+    setPriceChecked([])
     setFiltered([])
   }
 
@@ -122,7 +123,6 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         // setRatings,
         checked,
         toggleRating,
-        setFiltered,
         priceChecked,
         togglePrice
       }}

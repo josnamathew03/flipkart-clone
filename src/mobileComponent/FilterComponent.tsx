@@ -17,7 +17,7 @@ const FilterComponent = ({
 }: FilterComponentProps) => {
   const [viewRating, setViewRating] = useState(false)
   const ctx = useContext(ProductContext)
-  const { checked, toggleRating, setFiltered, togglePrice, priceChecked } = ctx
+  const { checked, toggleRating, togglePrice, priceChecked ,clearFilters} = ctx
 
   return createPortal(
     <div className='filter-com-wrap'>
@@ -26,7 +26,7 @@ const FilterComponent = ({
           className='back-btn'
           onClick={() => {
             setShowFilter(false)
-            setFiltered([])
+            clearFilters()
           }}
         >
           <HeaderAnchorM
@@ -52,7 +52,7 @@ const FilterComponent = ({
 
         <div className='filter-head-m'>
           <h1>Filters</h1>
-          <span>Clear Filters</span>
+          <span onClick={clearFilters}>Clear Filters</span>
         </div>
       </div>
       <div className='filter-body'>
