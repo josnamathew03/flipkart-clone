@@ -13,8 +13,6 @@
 }
 
 .des-wrap {
-
-
     color: rgba(102, 102, 102, 1);
     max-width: 100%;
     white-space: nowrap;
@@ -27,9 +25,8 @@
 }
 
 .read-container {
-
     width: 100%;
-    color: #2A55E5;
+    color: #2a55e5;
 }
 
 .border {
@@ -45,17 +42,245 @@
     overflow-x: scroll;
     overflow-y: hidden;
     margin-bottom: 1.35px;
-
+    position: relative;
 }
 
 .ad-container::-webkit-scrollbar {
     display: none;
 }
 
+.add-back {
+    height: 100%;
+}
+
 .ad-container img {
     height: 100%;
 }
 
+.add-content {
+    flex: 1 1 0%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.add-content-wrap {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+}
+
+.add-icon {
+    background-color: rgb(240, 242, 245);
+    padding-right: 4px;
+    padding-left: 4px;
+    position: absolute;
+    top: 4.5px;
+    left: 4px;
+    border-radius: 2px;
+}
+
+.add-icon-text {
+    color: rgb(17, 17, 18);
+    font-size: 10px;
+    line-height: 16px;
+    font-family: 'i-regular';
+    letter-spacing: 0.01px;
+}
+
+
+
+.deal-head-wrap {
+    min-height: 218px;
+    height: 184px;
+    width: 148px;
+    margin-right: 8px;
+    margin-left: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.deal-head-image,
+.add-item-image {
+    margin-bottom: 8px;
+    height: 104px;
+    width: 104px;
+}
+
+.deal-head-text {
+
+    color: rgb(17, 17, 18);
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'i-semi';
+    letter-spacing: -0.01px;
+    width: 100%;
+
+    max-width: 100%;
+
+    white-space: wrap;
+
+}
+
+.shop-now {
+    display: flex;
+}
+
+.shop-now-img {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 12px;
+    height: 16px;
+    margin-top: 1.5px;
+}
+
+.shop-now-text {
+    color: rgb(17, 17, 18);
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-regular';
+    letter-spacing: 0px;
+    max-width: 100%;
+}
+
+.shop-now-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.add-each-item {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.add-item {
+    margin-left: 8px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgb(213, 215, 219);
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    width: 148px;
+    border-style: solid;
+    height: 218px;
+}
+.add-item-image-wrap{
+    padding: 8px;
+    position: relative;
+
+}
+
+.add-item-image {
+    display: flex;
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.add-item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.add-star-con{
+    position: absolute;
+    bottom: 12px;
+    left: 8px;
+
+}
+.add-star{
+        flex-direction: row;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: rgb(0, 140, 0);
+    align-self: flex-start;
+    display: flex;
+    flex-basis: auto;
+    flex-shrink: 0;
+}
+.add-star-count{
+        color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-semi';
+    letter-spacing: 0px;
+}
+.add-star-icon{
+    color: rgb(255, 255, 255);
+    margin-left: 2px;
+    font-size: 10px;
+    line-height: 16px;
+    font-family: 'i-semi';
+    letter-spacing: 0.01px;
+}
+.add-des-con{
+        margin: .5px 6px 6px;
+        display: flex;
+        flex-direction: column;
+  
+}
+.add-des-name{
+        font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-regular';
+    letter-spacing: 0px;
+    align-items: flex-start;
+    overflow: hidden;
+    width: 100%;
+    /* margin-top: 4px; */
+    text-overflow: ellipsis;
+}
+.add-des-rest{
+        align-items: flex-start;
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.add-price{
+    display: flex;
+}
+.add-original{
+        font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-regular';
+    letter-spacing: 0px;
+    color: rgb(113, 116, 120);
+    text-decoration-line: line-through;
+
+}
+.add-offer{
+    margin-left: 4px;
+        font-size: 12px;
+    line-height: 18px;
+    font-family: "i-semi";
+    letter-spacing: 0px;
+    color: rgb(17, 17, 18);
+}
+.add-discount{
+    margin-top: 1.5px;
+
+}
+.add-discount span{
+        font-size: 12px;
+    line-height: 18px;
+    font-family: 'i-semi';
+    letter-spacing: 0px;
+    color: rgb(0, 140, 0);
+}
 /* ------------------------------------------------------------------------------------------------------------------- */
 
 .card-row-m {
@@ -77,9 +302,11 @@
     width: 50%;
     white-space: normal;
 }
+
 .card-m:not(:nth-child(2n)) {
-  border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
+
 .card-m-wrap {
     padding-bottom: 8px;
     min-height: 216px;
@@ -87,8 +314,6 @@
     width: 100%;
     flex-direction: column;
     flex-basis: auto;
-
-
 }
 
 .image-con-m {
@@ -109,7 +334,6 @@
     width: 100%;
     height: 100%;
     margin: auto;
-
 }
 
 .card-des-m {
@@ -120,14 +344,12 @@
     display: flex;
     flex-basis: auto;
     flex-shrink: 0;
-
 }
 
 .brand-wrap-m {
     margin-right: 6px;
     height: 18px;
     width: 100%;
-
 }
 
 .brand-wrap-m a {
@@ -159,7 +381,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-
 }
 
 .price-con-m {
@@ -176,7 +397,6 @@
     display: flex;
     font-family: 'i-semi';
     align-items: center;
-
 }
 
 .dis-con-m .dis-div {
@@ -232,7 +452,6 @@
 }
 
 .offer-text {
-
     font-size: 12px;
     color: rgb(6, 31, 128);
     font-style: normal;
@@ -245,7 +464,7 @@
     align-items: center;
     padding-top: 4px;
     padding-bottom: 4px;
-    display: flex
+    display: flex;
 }
 
 .assured-m {
@@ -255,7 +474,7 @@
     align-items: center;
     padding-top: 4px;
     padding-bottom: 4px;
-        display: flex;
+    display: flex;
     justify-content: flex-end;
     width: 100%;
 }
