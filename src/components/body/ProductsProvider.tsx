@@ -14,7 +14,7 @@ type ProductsContextType = {
   setFiltered: (arr: productType[]) => void
   checked: number[]
   toggleRating: (value: number) => void
-  priceChecked : number[],
+  priceChecked: number[]
   togglePrice: (value: string) => void
 }
 
@@ -30,7 +30,7 @@ export const ProductContext = createContext<ProductsContextType>({
   toggleRating: (value: number) => {},
   setFiltered: (arr: productType[]) => {},
   priceChecked: [],
-  togglePrice: (value:string) => {}
+  togglePrice: (value: string) => {}
 })
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
@@ -39,24 +39,25 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
   const [checked, setChecked] = useState<number[]>([])
   const [priceChecked, setPriceChecked] = useState<number[]>([])
-  
-  const togglePrice = (value: string) =>{
-      console.log(value)
 
-    const [v1,v2] = value.split(',').map(Number)
-      console.log(v1,v2)
+  const togglePrice = (value: string) => {
 
-   
-    setPriceChecked(prev=>{
+    const [v1, v2] = value.split('-').map(Number)
+
+
+    setPriceChecked(prev => {
       const exists = prev.includes(v1) && prev.includes(v2)
-      const updated =  exists?  prev.filter(f => f!== v1 && f!== v2 ) : [...prev,v1,v2]
-      console.log(updated)
-      const [min,max] =  [Math.min(...updated), Math.max(...updated)];
-      setPriceRange(min,max)
+
+      const updated = exists
+        ? prev.filter(f => f !== v1 && f !== v2)
+        : [...prev, v1, v2]
+
+      const [min, max] = [Math.min(...updated), Math.max(...updated)]
+
+      setPriceRange(min, max)
       return updated
     })
   }
-  
 
   const toggleRating = (value: number) => {
     setChecked(prev => {
@@ -71,6 +72,7 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const setPriceRange = (min: number, max: number) => {
     setFiltered(products.filter(p => p.price >= min && p.price <= max))
+
     if (min !== 0 || max !== 10000) {
       const filter = `₹${min}-₹${max}`
       setSelectedFilters(prev => {
