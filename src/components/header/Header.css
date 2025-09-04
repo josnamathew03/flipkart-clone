@@ -1,8 +1,11 @@
+.mobile{
+    display: none !important;
+}
+
 .header-wrap {
     padding-bottom: 56px;
     min-width: 978px;
     position: relative;
-
 }
 
 .header {

@@ -2,18 +2,23 @@
     .desktop {
         display: none;
     }
-    .mobile{
+
+    .mobile {
         display: flex;
         flex-direction: column;
-        max-width: 100vw;
+
+    }
+
+    .header-wrap-m {
+        display: block !important;
     }
 
     body {
         font-family:
             'r-regular', Arial, sans-serif;
-            font-size: 12px;
-            height: 100%;
-     
+        font-size: 12px;
+        height: 100%;
+
     }
-    
+
 }

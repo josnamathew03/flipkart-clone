@@ -123,21 +123,21 @@ const FilterComponent = ({
                 />
                 <Checkboxes
                   name='price'
-                  checked={priceChecked.includes(2001)}
+                  checked={priceChecked.includes(2601)} 
                   value={'2601-4000'}
                   label='Rs. 2601 to Rs. 4000'
                   handleChange={e => togglePrice(e.target.value)}
                 />
                 <Checkboxes
                   name='price'
-                  checked={priceChecked.includes(2001)}
+                  checked={priceChecked.includes(4001)}
                   value={'4001-7000'}
                   label='Rs. 4001 to Rs. 7000'
                   handleChange={e => togglePrice(e.target.value)}
                 />
                 <Checkboxes
                   name='price'
-                  checked={priceChecked.includes(2001)}
+                  checked={priceChecked.includes(7001)}
                   value={'7001-10000'}
                   label='Rs. 7001 to Rs. 10000'
                   handleChange={e => togglePrice(e.target.value)}

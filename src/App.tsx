@@ -12,15 +12,12 @@ import ProductsProvider from './components/body/ProductsProvider'
 function App () {
   return (
     <div className='App'>
-        
-
       <div className='desktop'>
         <Header />
         <Body />
         <Footer />
       </div>
       <div className='mobile'>
-        
         <ProductsProvider>
           <HeaderM />
           <BodyM />

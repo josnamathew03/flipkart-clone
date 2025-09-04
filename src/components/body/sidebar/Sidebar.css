@@ -90,7 +90,7 @@
 
 .show-more {
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     background: #fff;
     top: 82px;
     width: 100%;
@@ -258,7 +258,7 @@ transform: translateY(-2px);
 
 
 .slider-dot {
-    width: 26.3136px;
+    width: 28.9136px;
     color: #c2c2c2;
     font-size: 20px;
     display: inline-block;

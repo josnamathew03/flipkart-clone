@@ -6,35 +6,43 @@ const PriceFilter = () => {
   const [min, setMin] = useState(0)
   const [max, setMax] = useState(10000)
 
-  const ctx = useContext(ProductContext)
+  const [sliderValue, setSliderValue] = useState(9)
 
+  const ctx = useContext(ProductContext)
   const { setPriceRange } = ctx
+
+  const base = [0, 600, 1000, 1500, 2000, 2600, 4000, 7000, 10000]
 
   useEffect(() => {
     setPriceRange(min, max)
-    console.log(min, max)
   }, [min, max])
 
+  useEffect(()=>{
+  const currentsliderValue = base[sliderValue]
+  console.log(currentsliderValue)
+    setPriceRange(0, currentsliderValue)
 
+  },[sliderValue])
 
-  const minOptions = (max: number): option[]=>{
-    const base = [0,600,1000,1500,2000,2600,4000,7000,10000]
-    
-    return base.filter(each=>(each<max)
-  ).map(each=>({
-    label: each === 0? 'min' :`₹${each}`,
-    value: each
-  }))
+  const minOptions = (max: number): option[] => {
+    return base
+      .filter(each => each < max)
+      .map(each => ({
+        label: each === 0 ? 'min' : `₹${each}`,
+        value: each
+      }))
   }
 
-  const maxOptions = (min: number): option[]=>{
-    const base = [1000,1500,2000,2600,4000,7000,10000]
+  const maxOptions = (min: number): option[] => {
+    const baseMax = [1000, 1500, 2000, 2600, 4000, 7000, 10000]
     
-    return base.filter(each=>(each>min)
-  ).map(each=>({
-    label: each === 0? 'min' :`₹${each}`,
-    value: each
-  }))
+
+    return baseMax
+      .filter(each => each > min)
+      .map(each => ({
+        label: each === 0 ? 'min' : `₹${each}`,
+        value: each
+      }))
   }
   return (
     <div className='selected-container price-filter-con'>
@@ -48,10 +56,9 @@ const PriceFilter = () => {
       </div>
       <div>
         <div className='slidebar'>
-          <input type='range' min={'min'} max={10000} />
+          <input type='range' min={0} max={base.length-1} step={1} value={sliderValue} onChange={(e)=> setSliderValue(Number(e.target.value))}/>
         </div>
         <div className='slider-below'>
-          <div className='slider-dot'>.</div>
           <div className='slider-dot'>.</div>
           <div className='slider-dot'>.</div>
           <div className='slider-dot'>.</div>
@@ -77,7 +84,7 @@ const PriceFilter = () => {
           id='max'
           value={max}
           onChange={setMax}
-          options={ maxOptions(min)}
+          options={maxOptions(min)}
         />
       </div>
     </div>
