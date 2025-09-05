@@ -3,7 +3,7 @@ import HeaderAnchorM from './headerM/HeaderAnchorM'
 import './FilterComponent.css'
 import Checkboxes from '../components/Checkboxes'
 import { useContext, useState } from 'react'
-import { ProductContext } from '../components/body/ProductsProvider'
+import { ProductContext } from '../context/products/ProductsProvider'
 import Button from '../components/Button'
 
 type FilterComponentProps = {

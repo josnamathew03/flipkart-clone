@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer'
 import HeaderM from './mobileComponent/headerM/HeaderM'
 import BodyM from './mobileComponent/bodyM/BodyM'
 
-import ProductsProvider from './components/body/ProductsProvider'
+import ProductsProvider from './context/products/ProductsProvider'
 
 function App () {
   return (

@@ -1,6 +1,6 @@
 import CardM from "./CardM"
 import { useContext } from "react"
-import { ProductContext } from "../../components/body/ProductsProvider"
+import { ProductContext } from "../../context/products/ProductsProvider"
 
 const CardRowM = () => {
       const ctx = useContext(ProductContext)

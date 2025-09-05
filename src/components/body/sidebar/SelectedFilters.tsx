@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import SelectedEach from './SelectedEach'
-import { ProductContext } from '../ProductsProvider'
+import { ProductContext } from '../../../context/products/ProductsProvider'
 
 const SelectedFilters = () => {
   const ctx = useContext(ProductContext)

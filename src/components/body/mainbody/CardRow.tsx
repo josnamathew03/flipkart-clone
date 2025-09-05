@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Card from './Card'
-import { ProductContext } from '../ProductsProvider'
+import { ProductContext } from '../../../context/products/ProductsProvider'
 
 const CardRow = () => {
 

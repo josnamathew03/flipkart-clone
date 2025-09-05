@@ -49,10 +49,14 @@ img {
 .desktop {
   font-size: 14px;
   font-weight: 400;
-  font-family:  Helvetica, Arial, sans-serif;
-display: block !important;
-
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex !important;
+  flex-direction: column;
   line-height: 1.4;
+}
+
+.mobile {
+  display: none !important;
 }
 
 /* 
@@ -60,4 +64,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-

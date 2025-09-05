@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
 import PriceSelect, { option } from './PriceSelect'
-import { ProductContext } from '../ProductsProvider'
+import { ProductContext } from '../../../context/products/ProductsProvider'
 
 const PriceFilter = () => {
 

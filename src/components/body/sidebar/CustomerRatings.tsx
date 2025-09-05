@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import Checkboxes from '../../Checkboxes'
 import SidebarSections from './SidebarSections'
-import { ProductContext } from '../ProductsProvider'
+import { ProductContext } from '../../../context/products/ProductsProvider'
 
 const CustomerRatings = () => {
   const ctx = useContext(ProductContext)
