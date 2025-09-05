@@ -15,7 +15,6 @@ const useRatingFilter = (
 
   const toggleRating = (value: number) => {
     setChecked(prev => {
-      console.log(value, prev)
 
       const updated = prev.includes(value)
         ? prev.filter(f => f != value)

@@ -28,7 +28,6 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }
 
   const removeFilter = (filter: string) => {
-    console.log(filter)
     setSelectedFilters(prev => prev.filter(f => f !== filter))
     if (filter.includes('₹')) {
       price.setMin(0)
@@ -45,6 +44,7 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
+    console.log(temp)
     setFiltered(temp)
   }, [rating.checked, price.max, price.min,products])
 

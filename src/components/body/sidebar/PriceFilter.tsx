@@ -18,7 +18,6 @@ const PriceFilter = () => {
   useEffect(() => {
     const currentsliderValue = base[sliderValue]
     // setPriceRange(0, currentsliderValue)
-    console.log(sliderValue)
     setMax(currentsliderValue)
   }, [sliderValue])
 
