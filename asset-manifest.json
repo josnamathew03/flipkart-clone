@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/flipkart-clone/static/css/main.adc4014d.css",
-    "main.js": "/flipkart-clone/static/js/main.a07dfe1f.js",
+    "main.js": "/flipkart-clone/static/js/main.099ea317.js",
     "static/js/453.40ecddbd.chunk.js": "/flipkart-clone/static/js/453.40ecddbd.chunk.js",
     "static/media/Inter-Bold.woff2": "/flipkart-clone/static/media/Inter-Bold.0211cb8bc4e58de195aa.woff2",
     "static/media/Inter-SemiBold.woff2": "/flipkart-clone/static/media/Inter-SemiBold.ced909abad6a0e325b60.woff2",
@@ -10,11 +10,11 @@
     "static/media/roboto-medium.woff2": "/flipkart-clone/static/media/roboto-medium.a2db6b7250290a6b1156.woff2",
     "index.html": "/flipkart-clone/index.html",
     "main.adc4014d.css.map": "/flipkart-clone/static/css/main.adc4014d.css.map",
-    "main.a07dfe1f.js.map": "/flipkart-clone/static/js/main.a07dfe1f.js.map",
+    "main.099ea317.js.map": "/flipkart-clone/static/js/main.099ea317.js.map",
     "453.40ecddbd.chunk.js.map": "/flipkart-clone/static/js/453.40ecddbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.adc4014d.css",
-    "static/js/main.a07dfe1f.js"
+    "static/js/main.099ea317.js"
   ]
 }
