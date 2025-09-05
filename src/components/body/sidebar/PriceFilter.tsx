@@ -3,13 +3,11 @@ import PriceSelect, { option } from './PriceSelect'
 import { ProductContext } from '../ProductsProvider'
 
 const PriceFilter = () => {
-  const [min, setMin] = useState(0)
-  const [max, setMax] = useState(10000)
 
-  const [sliderValue, setSliderValue] = useState(9)
+
 
   const ctx = useContext(ProductContext)
-  const { setPriceRange } = ctx
+  const { setPriceRange,setMin,min,max,setMax, setSliderValue, sliderValue } = ctx
 
   const base = [0, 600, 1000, 1500, 2000, 2600, 4000, 7000, 10000]
 
@@ -17,12 +15,12 @@ const PriceFilter = () => {
     setPriceRange(min, max)
   }, [min, max])
 
-  useEffect(()=>{
-  const currentsliderValue = base[sliderValue]
-  console.log(currentsliderValue)
-    setPriceRange(0, currentsliderValue)
-
-  },[sliderValue])
+  useEffect(() => {
+    const currentsliderValue = base[sliderValue]
+    // setPriceRange(0, currentsliderValue)
+    console.log(sliderValue)
+    setMax(currentsliderValue)
+  }, [sliderValue])
 
   const minOptions = (max: number): option[] => {
     return base
@@ -34,8 +32,7 @@ const PriceFilter = () => {
   }
 
   const maxOptions = (min: number): option[] => {
-    const baseMax = [1000, 1500, 2000, 2600, 4000, 7000, 10000]
-    
+    const baseMax = [600,1000, 1500, 2000, 2600, 4000, 7000, 10000]
 
     return baseMax
       .filter(each => each > min)
@@ -56,7 +53,14 @@ const PriceFilter = () => {
       </div>
       <div>
         <div className='slidebar'>
-          <input type='range' min={0} max={base.length-1} step={1} value={sliderValue} onChange={(e)=> setSliderValue(Number(e.target.value))}/>
+          <input
+            type='range'
+            min={0}
+            max={8}
+            step={1}
+            value={sliderValue}
+            onChange={e => setSliderValue(Number(e.target.value))}
+          />
         </div>
         <div className='slider-below'>
           <div className='slider-dot'>.</div>

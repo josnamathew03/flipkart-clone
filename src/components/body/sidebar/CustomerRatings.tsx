@@ -5,15 +5,15 @@ import { ProductContext } from '../ProductsProvider'
 
 const CustomerRatings = () => {
   const ctx = useContext(ProductContext)
-  const { toggleRating, checked} = ctx
+  const { toggleRating, checked, clearFilters} = ctx
 
   return (
     <div className='selected-container price-filter-con'>
       <SidebarSections text='Customer Ratings' />
-      <div className='type-selection-con'>
-        <div className='clear-all-con'>
+      <div className='type-selection-con' >
+        <div className='clear-all-con' onClick={clearFilters}>
           <div className='clear-cross'>✕</div>
-          <div className='clear-all'>
+          <div className='clear-all' >
             <span>Clear all</span>
           </div>
         </div>

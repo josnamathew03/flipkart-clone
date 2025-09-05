@@ -1,7 +1,7 @@
 .header-m {
     height: 156px;
     position: relative;
-    
+
 
 }
 
@@ -12,11 +12,13 @@
     flex-shrink: 0;
     align-items: stretch;
     background-color: rgb(255, 255, 255);
-    position: fixed;
+    height: 100%;
+    /* position: fixed;
     z-index: 99;
-right: 0;
-left: 0;
+    right: 0;
+    left: 0;
     top: 0;
+    width: 100%; */
 
 }
 
@@ -30,7 +32,7 @@ left: 0;
     width: 100%;
     min-height: 52px;
     align-items: center;
-   
+
 
 }
 
@@ -111,7 +113,7 @@ left: 0;
     border-right: 0;
     border-style: solid;
     background-color: rgb(255, 255, 255);
-         /* position: sticky;
+    /* position: sticky;
     top: 59px;
     z-index: 99; */
 

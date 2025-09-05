@@ -49,8 +49,8 @@ img {
 .desktop {
   font-size: 14px;
   font-weight: 400;
-  font-family: Inter, -apple-system, Helvetica, Arial, sans-serif;
-
+  font-family:  Helvetica, Arial, sans-serif;
+display: block !important;
 
   line-height: 1.4;
 }

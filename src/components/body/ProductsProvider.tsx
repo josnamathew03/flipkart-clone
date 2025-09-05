@@ -15,6 +15,12 @@ type ProductsContextType = {
   toggleRating: (value: number) => void
   priceChecked: number[]
   togglePrice: (value: string) => void
+  setMin: (value: number) => void
+  setMax: (value: number) => void
+  min: number
+  max: number
+  sliderValue: number
+  setSliderValue: (value: number) => void
 }
 
 export const ProductContext = createContext<ProductsContextType>({
@@ -29,7 +35,13 @@ export const ProductContext = createContext<ProductsContextType>({
   toggleRating: (value: number) => {},
 
   priceChecked: [],
-  togglePrice: (value: string) => {}
+  togglePrice: (value: string) => {},
+  setMin: (value: number) => {},
+  setMax: (value: number) => {},
+  min: 0,
+  max: 10000,
+  sliderValue: 8,
+  setSliderValue: (value: number) => {}
 })
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
@@ -38,11 +50,12 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
   const [checked, setChecked] = useState<number[]>([])
   const [priceChecked, setPriceChecked] = useState<number[]>([])
+  const [min, setMin] = useState(0)
+  const [max, setMax] = useState(10000)
+  const [sliderValue, setSliderValue] = useState(8)
 
   const togglePrice = (value: string) => {
-
     const [v1, v2] = value.split('-').map(Number)
-
 
     setPriceChecked(prev => {
       const exists = prev.includes(v1) && prev.includes(v2)
@@ -60,10 +73,12 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const toggleRating = (value: number) => {
     setChecked(prev => {
+      console.log(value, prev)
+
       const updated = prev.includes(value)
         ? prev.filter(f => f != value)
         : [...prev, value]
-
+                                                                       
       setRatings(updated)
       return updated
     })
@@ -71,8 +86,7 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const setPriceRange = (min: number, max: number) => {
     setFiltered(products.filter(p => p.price >= min && p.price <= max))
-
-    if (min !== 0 || max !== 10000) {
+    if (min !== 0 || (max !== 10000 && max !== undefined)) {
       const filter = `₹${min}-₹${max}`
       setSelectedFilters(prev => {
         const withoutPrice = prev.filter(f => !f.includes('₹'))
@@ -92,13 +106,25 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const clearFilters = () => {
     setSelectedFilters([])
+    
     setChecked([])
     setPriceChecked([])
     setFiltered([])
+    setMin(0)
+    setMax(10000)
+    setSliderValue(8)
   }
 
   const removeFilter = (filter: string) => {
+    console.log(filter)
     setSelectedFilters(prev => prev.filter(f => f !== filter))
+    if (filter.includes('₹')) {
+      setMin(0)
+      setMax(10000)
+      setSliderValue(8)
+    } else {
+      setChecked([])
+    }
   }
   useEffect(() => {
     fetch('/data/products.json')
@@ -124,7 +150,13 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         checked,
         toggleRating,
         priceChecked,
-        togglePrice
+        togglePrice,
+        setMin,
+        setMax,
+        min,
+        max,
+        sliderValue,
+        setSliderValue
       }}
     >
       {children}
