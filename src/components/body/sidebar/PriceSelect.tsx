@@ -1,5 +1,4 @@
-import { useContext } from 'react'
-import { ProductContext } from '../../../context/products/ProductsProvider'
+
 
 export type option = {
   label: string

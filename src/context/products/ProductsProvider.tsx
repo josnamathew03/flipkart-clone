@@ -49,7 +49,7 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }, [rating.checked, price.max, price.min,products])
 
   useEffect(() => {
-    fetch('/data/products.json')
+    fetch(process.env.PUBLIC_URL  + '/data/products.json')
       .then(res => res.json())
       .then((data: productType[]) => setProducts(data))
       .catch(err => console.log(' error ', err))
