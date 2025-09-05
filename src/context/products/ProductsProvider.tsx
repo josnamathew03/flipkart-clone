@@ -14,8 +14,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [filtered, setFiltered] = useState<productType[]>([])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
-  const price = priceFilter(products, setFiltered, setSelectedFilters)
-  const rating = ratingFilter(products, setFiltered, setSelectedFilters)
+  const price = priceFilter( setSelectedFilters)
+  const rating = ratingFilter( setSelectedFilters)
 
   const clearFilters = () => {
     setSelectedFilters([])
@@ -38,6 +38,15 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       rating.setChecked([])
     }
   }
+
+  useEffect(() => {
+    let temp = products
+    if (rating.checked.length > 0) {
+      temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
+    }
+    temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
+    setFiltered(temp)
+  }, [rating.checked, price.max, price.min,products])
 
   useEffect(() => {
     fetch('/data/products.json')

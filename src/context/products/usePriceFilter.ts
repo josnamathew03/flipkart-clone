@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { productType } from '../../types/productType'
+
 
 const usePriceFilter = (
-  products: productType[],
-  setFiltered: React.Dispatch<React.SetStateAction<productType[]>>,
+
   setSelectedFilters: React.Dispatch<React.SetStateAction<string[]>>
 ) => {
   const [priceChecked, setPriceChecked] = useState<number[]>([])
@@ -26,7 +25,7 @@ const usePriceFilter = (
   }
 
   const setPriceRange = (min: number, max: number) => {
-    setFiltered(products.filter(p => p.price >= min && p.price <= max))
+    // setFiltered(products.filter(p => p.price >= min && p.price <= max))
     if (min !== 0 || (max !== 10000 && max !== undefined)) {
       const filter = `₹${min}-₹${max}`
       setSelectedFilters(prev => {
