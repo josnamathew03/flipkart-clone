@@ -7,9 +7,9 @@ const useSearch = (
 ) => {
   const [searchInput, setSearchInput] = useState<string>('')
   const regEx = new RegExp(searchInput, 'gi')
-  const results = product.filter(each => regEx.test(each.name))  
-  useEffect(() => {
-    setFiltered(results)        
+  const results = product.filter(each => regEx.test(each.name || each.brand))  
+  useEffect(() => { 
+    setFiltered(results)         
   }, [ searchInput, setFiltered]) 
                               
   return { searchInput, setSearchInput,results }
