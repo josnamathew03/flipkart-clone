@@ -11,7 +11,6 @@ const usePriceFilter = (
   const [sliderValue, setSliderValue] = useState(8)
 
   const togglePrice = (value: string) => {
-    console.log(value)
     const [v1, v2] = value.split('-').map(Number)
 
     setPriceChecked(prev => {
@@ -22,7 +21,6 @@ const usePriceFilter = (
       const [min, max] = [Math.min(...updated), Math.max(...updated)]
       setMin(min)
       setMax(max)
-      console.log(min,max)
       setPriceRange(min, max)
       return updated
     })

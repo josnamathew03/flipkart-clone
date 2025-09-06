@@ -44,7 +44,6 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
-    console.log(temp)
     setFiltered(temp)
   }, [rating.checked, price.max, price.min,products])
 

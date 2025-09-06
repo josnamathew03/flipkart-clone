@@ -1,6 +1,5 @@
-import { productType } from "../../types/productType"
-
-
+import { productType } from '../../types/productType'
+import { StarComponent } from '../StarComponent'
 
 const CardM = ({
   id,
@@ -11,23 +10,24 @@ const CardM = ({
   stars,
   flipAssured,
   price,
-  original,
+  original,                 
   bankOffer,
   left
-
-
 }: productType) => {
-    const dis = Math.floor(((original-price) / original) * 100)
+  const dis = Math.floor(((original - price) / original) * 100)
+
+  const fullStar = Math.floor(stars.star)
+  const halfStar =  fullStar-5 > 0.5 ? 0 : 1;
+  const emptyStar = 5 - fullStar - halfStar
+  console.log(fullStar,halfStar,emptyStar)
+
 
   return (
     <div className='card-m'>
       <div className='card-m-wrap'>
         <div className='image-con-m'>
           <div className='image-wrap-m'>
-            <img
-              src={image}
-              alt=''
-            />
+            <img src={image} alt='' />
           </div>
         </div>
         <div className='card-des-m'>
@@ -35,9 +35,7 @@ const CardM = ({
             <a href='/'>{brand}</a>
           </div>
           <a href='/' className='card-name-anchor'>
-            <div className='card-name-m'>
-              {name}
-            </div>
+            <div className='card-name-m'>{name}</div>
           </a>
           <div className='price-con-m'>
             <div className='dis-con-m'>
@@ -56,23 +54,52 @@ const CardM = ({
               <div>₹{price}</div>
             </div>
           </div>
-          <div className="offer-con-m">
-            <div className="wow">
-            <img src="https://rukminim2.flixcart.com/www/76/32/promos/30/08/2023/59dc7885-72bf-4135-9099-025f074b0eb1.png?q=90" alt="" />
-
+          <div className='offer-con-m'>
+            <div className='wow'>
+              <img
+                src='https://rukminim2.flixcart.com/www/76/32/promos/30/08/2023/59dc7885-72bf-4135-9099-025f074b0eb1.png?q=90'
+                alt=''
+              />
             </div>
-            <div className="offer-money"> ₹9,170 </div>
-            <div className="offer-text">with Bank offer</div>
+            <div className='offer-money'> ₹9,170 </div>
+            <div className='offer-text'>with Bank offer</div>
           </div>
-          <div className="assured-m">
-            <div className="assured-img">
-                <img src="https://rukminim2.flixcart.com/www/60/16/promos/25/06/2024/71af54bd-9160-41ff-81cc-c55e534dedeb.png?q=80" alt="" />
+          <div className='assured-m'>
+            <div className='star-m-con'>
+              <div className='star-m-wrap'>
+                {
+                 Array(fullStar).fill(0).map((each,i)=> <StarComponent key={i} filled={true}/>)
+                }
+             {halfStar? <StarComponent half={true}/> : ''}
+            {emptyStar > 0 && Array(emptyStar).fill(0).map((each,i)=> <StarComponent key={i} filled={false}/>) }
+            
+              </div>
             </div>
+            {flipAssured ? ( 
+              <div className='assured-img'>
+                <img
+                  src='https://rukminim2.flixcart.com/www/60/16/promos/25/06/2024/71af54bd-9160-41ff-81cc-c55e534dedeb.png?q=80'
+                  alt=''
+                />
+              </div>
+            ) : ( 
+              ''
+            )}
           </div>
-        </div>
+        </div>             
       </div>
-      <div className="like-btn-m">
-        <svg width="24" height="24" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path d="M128 216S28 160 28 92a52 52 0 0 1 100-20h0a52 52 0 0 1 100 20c0 68-100 124-100 124Z" fill="#fff" stroke="#B8BBBF" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path></svg>
+      <div className='like-btn-m'>
+        <svg width='24' height='24' viewBox='0 0 256 256'>
+          <path fill='none' d='M0 0h256v256H0z'></path>
+          <path
+            d='M128 216S28 160 28 92a52 52 0 0 1 100-20h0a52 52 0 0 1 100 20c0 68-100 124-100 124Z'
+            fill='#fff'
+            stroke='#B8BBBF'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='12'
+          ></path>
+        </svg>
       </div>
     </div>
   )

@@ -12,13 +12,13 @@ const useRatingFilter = (
 
     setSelectedFilters(rate)
   }
-
+                         
   const toggleRating = (value: number) => {
     setChecked(prev => {
 
       const updated = prev.includes(value)
-        ? prev.filter(f => f != value)
-        : [...prev, value]
+        ? prev.filter(f => f !== value)
+        : [...prev, value]                 
 
       setRatings(updated)
       return updated
