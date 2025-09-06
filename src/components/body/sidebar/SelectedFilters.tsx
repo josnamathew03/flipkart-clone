@@ -5,7 +5,7 @@ import { ProductContext } from '../../../context/products/ProductsProvider'
 const SelectedFilters = () => {
   const ctx = useContext(ProductContext)
   const {selectedFilters, clearFilters, removeFilter} = ctx
-  const [height, setHeight] = useState(104)
+  const [height, setHeight] = useState(120)
 
   return (
     <div className='selected-container'>

@@ -47,7 +47,7 @@
 
 .selected-items {
     position: relative;
-    max-height: 104px;
+    /* max-height: 104px; */
     overflow: hidden;
 }
 
