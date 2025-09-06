@@ -20,4 +20,10 @@ export type ProductsContextType = {
   setSliderValue: (value: number) => void
   setSearchInput: (value: string) => void
   searchInput: string
+  // results: productType[]
+  pageIndex : [number,number]
+  setPageIndex:  (value: [number,number]) => void
+  setProducts: (products:productType[]) => void 
+  currentPage: number
+  setCurrentPage: (value: number) => void
 }

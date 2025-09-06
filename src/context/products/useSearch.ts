@@ -7,13 +7,13 @@ const useSearch = (
 ) => {
   const [searchInput, setSearchInput] = useState<string>('')
   const regEx = new RegExp(searchInput, 'gi')
-  const results = product.filter(each => regEx.test(each.name))
-  console.log(results)
+  const results = product.filter(each => regEx.test(each.name))  
   useEffect(() => {
-    setFiltered(results)
-  }, [results, searchInput, setFiltered])
-
-  return { searchInput, setSearchInput }
+    setFiltered(results)        
+  }, [ searchInput, setFiltered]) 
+                              
+  return { searchInput, setSearchInput,results }
 }
-
+                   
 export default useSearch
+    

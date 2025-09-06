@@ -5,7 +5,6 @@ import { ProductContext } from '../../../context/products/ProductsProvider'
 const SearchBar = () => {
   const ctx = useContext(ProductContext)
   const {setSearchInput, searchInput} = ctx
-  console.log(searchInput)
   return (
     <div className='search-container'>
       <form>

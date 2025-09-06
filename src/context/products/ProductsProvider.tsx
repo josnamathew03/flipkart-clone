@@ -5,9 +5,10 @@ import { productType } from '../../types/productType'
 import usePriceFilter from './usePriceFilter'
 import useRatingFilter from './useRatingFilter'
 import useSearch from './useSearch'
+import usePagination from './usePagination'
 
 export const ProductContext = createContext<ProductsContextType>(
-  {} as ProductsContextType        
+  {} as ProductsContextType
 )
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
@@ -15,11 +16,10 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [filtered, setFiltered] = useState<productType[]>([])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
-
- 
-  const price = usePriceFilter( setSelectedFilters)
-  const rating = useRatingFilter( setSelectedFilters)
-  const search = useSearch(setFiltered,products)
+  const price = usePriceFilter(setSelectedFilters)
+  const rating = useRatingFilter(setSelectedFilters)
+  const search = useSearch(setFiltered, products)
+  const pagination = usePagination()
 
   const clearFilters = () => {
     setSelectedFilters([])
@@ -38,9 +38,9 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       price.setMax(10000)
       price.setSliderValue(8)
     } else {
-      rating.setChecked(prev=> prev.filter(f=>
-        f !== Number((filter.charAt(0)))
-      ))
+      rating.setChecked(prev =>
+        prev.filter(f => f !== Number(filter.charAt(0)))
+      )
     }
   }
 
@@ -50,17 +50,22 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
-    setFiltered(temp)
-  }, [rating.checked, price.max, price.min,products])
-                                 
+    if (rating.checked.length > 0 || price.min > 0 || price.max < 10000) {
+      setFiltered(temp)
+    }
+    else{
+      setFiltered([])
+    }
+  }, [rating.checked, price.max, price.min, products])
+
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL  + '/data/products.json')
+    fetch(process.env.PUBLIC_URL + '/data/products.json')
       .then(res => res.json())
       .then((data: productType[]) => setProducts(data))
-      .catch(err => console.log(' error ', err))                  
+      .catch(err => console.log(' error ', err))
   }, [])
 
-  useEffect(() => {               
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [filtered])
 
@@ -68,6 +73,7 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
     <ProductContext.Provider
       value={{
         products,
+        setProducts,
         filtered,
         selectedFilters,
         clearFilters,
@@ -85,7 +91,13 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         sliderValue: price.sliderValue,
         setSliderValue: price.setSliderValue,
         setSearchInput: search.setSearchInput,
-        searchInput: search.searchInput
+        searchInput: search.searchInput,
+        // results: search.results,
+        pageIndex: pagination.pageIndex,
+        setPageIndex: pagination.setPageIndex,
+        setCurrentPage: pagination.setCurrentPage,
+        currentPage: pagination.currentPage
+
       }}
     >
       {children}
