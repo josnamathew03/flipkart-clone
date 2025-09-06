@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/flipkart-clone/static/css/main.adc4014d.css",
-    "main.js": "/flipkart-clone/static/js/main.097e362c.js",
+    "main.css": "/flipkart-clone/static/css/main.fd64bc4a.css",
+    "main.js": "/flipkart-clone/static/js/main.498ccca6.js",
     "static/js/453.40ecddbd.chunk.js": "/flipkart-clone/static/js/453.40ecddbd.chunk.js",
     "static/media/Inter-Bold.woff2": "/flipkart-clone/static/media/Inter-Bold.0211cb8bc4e58de195aa.woff2",
     "static/media/Inter-SemiBold.woff2": "/flipkart-clone/static/media/Inter-SemiBold.ced909abad6a0e325b60.woff2",
@@ -9,12 +9,12 @@
     "static/media/roboto-regular-m.woff2": "/flipkart-clone/static/media/roboto-regular-m.779fb582464e2a2a53d6.woff2",
     "static/media/roboto-medium.woff2": "/flipkart-clone/static/media/roboto-medium.a2db6b7250290a6b1156.woff2",
     "index.html": "/flipkart-clone/index.html",
-    "main.adc4014d.css.map": "/flipkart-clone/static/css/main.adc4014d.css.map",
-    "main.097e362c.js.map": "/flipkart-clone/static/js/main.097e362c.js.map",
+    "main.fd64bc4a.css.map": "/flipkart-clone/static/css/main.fd64bc4a.css.map",
+    "main.498ccca6.js.map": "/flipkart-clone/static/js/main.498ccca6.js.map",
     "453.40ecddbd.chunk.js.map": "/flipkart-clone/static/js/453.40ecddbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.adc4014d.css",
-    "static/js/main.097e362c.js"
+    "static/css/main.fd64bc4a.css",
+    "static/js/main.498ccca6.js"
   ]
 }
