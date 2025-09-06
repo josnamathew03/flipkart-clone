@@ -7,12 +7,14 @@ const useRatingFilter = (
   const setRatings = (values: number[]) => {
     const rate = values.map(v => `${v}★ & above`)
 
-    if (values.length === 0) return
     // setFiltered(products.filter(p => values.some(v => p.stars.star >= v)))
-
-    setSelectedFilters(rate)
-  }
-                         
+   
+               
+    setSelectedFilters(prev=>{
+      const withoutaRating = prev.filter(f=> !f.includes('★'))
+      return [...withoutaRating,...rate]
+    })
+    }                      
   const toggleRating = (value: number) => {
     setChecked(prev => {
 

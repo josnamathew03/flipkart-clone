@@ -4,6 +4,7 @@ import { ProductsContextType } from '../../types/ProductsContextType'
 import { productType } from '../../types/productType'
 import priceFilter from './usePriceFilter'
 import ratingFilter from './useRatingFilter'
+import { log } from 'console'
 
 export const ProductContext = createContext<ProductsContextType>(
   {} as ProductsContextType
@@ -13,6 +14,11 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<productType[]>([])
   const [filtered, setFiltered] = useState<productType[]>([])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
+  // console.log(selectedFilters)
+
+  useEffect(()=>{
+    console.log(selectedFilters) 
+  },[selectedFilters])
 
   const price = priceFilter( setSelectedFilters)
   const rating = ratingFilter( setSelectedFilters)

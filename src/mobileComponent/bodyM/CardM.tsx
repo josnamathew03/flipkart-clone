@@ -19,7 +19,6 @@ const CardM = ({
   const fullStar = Math.floor(stars.star)
   const halfStar =  fullStar-5 > 0.5 ? 0 : 1;
   const emptyStar = 5 - fullStar - halfStar
-  console.log(fullStar,halfStar,emptyStar)
 
 
   return (
