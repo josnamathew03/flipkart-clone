@@ -5,18 +5,19 @@ import { ProductContext } from '../../../context/products/ProductsProvider'
 const SelectedFilters = () => {
   const ctx = useContext(ProductContext)
   const {selectedFilters, clearFilters, removeFilter} = ctx
+  const [height, setHeight] = useState(104)
 
   return (
     <div className='selected-container'>
       <div className='selected-heading-wrap'>
         <div className='selected-heading'>
           <span>Filters</span>
-        </div>
+        </div> 
         <div className='clear-container' onClick={clearFilters}>
           <span >Clear all</span>
-        </div>
+        </div>                   
       </div>
-      <div className='selected-items'>
+      <div className='selected-items' style={{'maxHeight' : `${height}px`} }>
         <div className='selected-items-wrap'>
           {/* <SelectedEach cat='3★ & above'/>
 
@@ -31,7 +32,7 @@ const SelectedFilters = () => {
 
 
         </div>
-        <div className='show-more'>
+        <div className='show-more' onClick={()=>setHeight(200)}>
             <span>Show More</span>
         </div>
       </div>

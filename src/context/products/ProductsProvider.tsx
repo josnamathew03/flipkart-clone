@@ -14,11 +14,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<productType[]>([])
   const [filtered, setFiltered] = useState<productType[]>([])
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
-  // console.log(selectedFilters)
 
-  useEffect(()=>{
-    console.log(selectedFilters) 
-  },[selectedFilters])
+
 
   const price = priceFilter( setSelectedFilters)
   const rating = ratingFilter( setSelectedFilters)
@@ -40,7 +37,9 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       price.setMax(10000)
       price.setSliderValue(8)
     } else {
-      rating.setChecked([])
+      rating.setChecked(prev=> prev.filter(f=>
+        f !== Number((filter.charAt(0)))
+      ))
     }
   }
 
