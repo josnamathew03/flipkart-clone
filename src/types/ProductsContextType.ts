@@ -18,4 +18,6 @@ export type ProductsContextType = {
   max: number
   sliderValue: number
   setSliderValue: (value: number) => void
+  setSearchInput: (value: string) => void
+  searchInput: string
 }

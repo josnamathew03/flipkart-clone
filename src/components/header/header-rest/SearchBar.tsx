@@ -1,12 +1,17 @@
+import { useContext } from 'react'
 import Button from '../../Button'
 import '../Header.css'
+import { ProductContext } from '../../../context/products/ProductsProvider'
 const SearchBar = () => {
+  const ctx = useContext(ProductContext)
+  const {setSearchInput, searchInput} = ctx
+  console.log(searchInput)
   return (
     <div className='search-container'>
       <form>
         <div className='search-wrap'>
           <div className='input-wrap'>
-            <input type='text' placeholder='Search for products, brands and more'/>
+            <input type='text' placeholder='Search for products, brands and more' onChange={(e)=> setSearchInput(e.target.value)} value={searchInput}/>
           </div>
           <div className='search-spacer'></div>
           <Button className='search-button'>

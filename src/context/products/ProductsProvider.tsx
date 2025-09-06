@@ -2,12 +2,12 @@ import { ReactNode, useEffect, useState } from 'react'
 import { createContext } from 'react'
 import { ProductsContextType } from '../../types/ProductsContextType'
 import { productType } from '../../types/productType'
-import priceFilter from './usePriceFilter'
-import ratingFilter from './useRatingFilter'
-import { log } from 'console'
+import usePriceFilter from './usePriceFilter'
+import useRatingFilter from './useRatingFilter'
+import useSearch from './useSearch'
 
 export const ProductContext = createContext<ProductsContextType>(
-  {} as ProductsContextType
+  {} as ProductsContextType        
 )
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
@@ -16,9 +16,10 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
 
-
-  const price = priceFilter( setSelectedFilters)
-  const rating = ratingFilter( setSelectedFilters)
+ 
+  const price = usePriceFilter( setSelectedFilters)
+  const rating = useRatingFilter( setSelectedFilters)
+  const search = useSearch(setFiltered,products)
 
   const clearFilters = () => {
     setSelectedFilters([])
@@ -51,15 +52,15 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
     setFiltered(temp)
   }, [rating.checked, price.max, price.min,products])
-
+                                 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL  + '/data/products.json')
       .then(res => res.json())
       .then((data: productType[]) => setProducts(data))
-      .catch(err => console.log(' error ', err))
+      .catch(err => console.log(' error ', err))                  
   }, [])
 
-  useEffect(() => {
+  useEffect(() => {               
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [filtered])
 
@@ -82,7 +83,9 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         min: price.min,
         max: price.max,
         sliderValue: price.sliderValue,
-        setSliderValue: price.setSliderValue
+        setSliderValue: price.setSliderValue,
+        setSearchInput: search.setSearchInput,
+        searchInput: search.searchInput
       }}
     >
       {children}

@@ -13,9 +13,11 @@ function App () {
   return (
     <div className='App'>
       <div className='desktop'>
-        <Header />
-        <Body />
-        <Footer />
+        <ProductsProvider>
+          <Header />
+          <Body />
+          <Footer />
+        </ProductsProvider>
       </div>
       <div className='mobile'>
         <ProductsProvider>
