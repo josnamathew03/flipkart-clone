@@ -165,7 +165,7 @@
     "bankOffer": false,
     "left": 3
 
-  },
+  }, 
   {
     "id":11,
     "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/z/o/r/-original-imah45pfaf87c3uk.jpeg?q=70",
@@ -667,6 +667,173 @@
     "bankOffer": true,
     "left": 0
 
+  },
+  {
+    "id":41,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/3/k/k/-original-imah45q9zpkxdc7a.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Blue Lava, True Wireless",
+    "stars": {
+      "star": 2.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 999,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 3
+
+  },
+  {
+    "id":42,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/z/o/r/-original-imah45pfaf87c3uk.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Black Dune, True Wireless",
+    "stars": {
+      "star": 4.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 999,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 2
+  },
+  {
+    "id":43,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/5/b/b/-original-imahdt83yzyjqqhe.jpeg?q=70",
+    "sponsored": true,
+    "name": " boAt Airdopes 219, 40H Battery, Free Music Streaming & ...",
+    "brand": "Forest Sage, True Wireless",
+    "stars": {
+      "star": 3.1,
+      "count": "2,808"
+    },
+    "flipAssured": false,
+    "price": 1099,
+    "original": 3990,
+    "bankOffer": true,
+    "left": 0
+
+  },
+    {
+    "id":44,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/h/l/z/-original-imahbuzznrfssfqe.jpeg?q=70",
+    "sponsored": true,
+    "name": "boAt Airdopes 91 Bluetooth",
+    "brand": "Active Black, True Wireless",
+    "stars": {
+      "star": 3.8,
+      "count": "9,964"
+    },
+    "flipAssured": true,
+    "price": 899,
+    "original": 4990,
+    "bankOffer": true,
+    "left": 0
+
+  },
+   {
+    "id":45,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/3/k/k/-original-imah45q9zpkxdc7a.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Blue Lava, True Wireless",
+    "stars": {
+      "star": 4.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 999,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 3
+
+  },
+  {
+    "id":46,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/z/o/r/-original-imah45pfaf87c3uk.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Black Dune, True Wireless",
+    "stars": {
+      "star": 4.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 999,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 2
+  },
+  {
+    "id":47,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/5/b/b/-original-imahdt83yzyjqqhe.jpeg?q=70",
+    "sponsored": true,
+    "name": " boAt Airdopes 219, 40H Battery, Free Music Streaming & ...",
+    "brand": "Forest Sage, True Wireless",
+    "stars": {
+      "star": 4.1,
+      "count": "2,808"
+    },
+    "flipAssured": false,
+    "price": 1099,
+    "original": 3990,
+    "bankOffer": true,
+    "left": 0
+
+  },
+    {
+    "id":48,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/h/l/z/-original-imahbuzznrfssfqe.jpeg?q=70",
+    "sponsored": true,
+    "name": "boAt Airdopes 91 Bluetooth",
+    "brand": "Active Black, True Wireless",
+    "stars": {
+      "star": 3.8,
+      "count": "9,964"
+    },
+    "flipAssured": true,
+    "price": 899,
+    "original": 4990,
+    "bankOffer": true,
+    "left": 0
+
+  },
+   {
+    "id":49,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/3/k/k/-original-imah45q9zpkxdc7a.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Blue Lava, True Wireless",
+    "stars": {
+      "star": 4.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 7999,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 3
+
+  },
+  {
+    "id":50,
+    "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/z/o/r/-original-imah45pfaf87c3uk.jpeg?q=70",
+    "sponsored": false,
+    "name": "Number SuperBuds 555 with Dual Pair, 66H Battery, 32dB ...",
+    "brand": "Black Dune, True Wireless",
+    "stars": {
+      "star": 1.1,
+      "count": "2,851"
+    },
+    "flipAssured": true,
+    "price": 299,
+    "original": 7999,
+    "bankOffer": false,
+    "left": 2
   }
 
 ]
