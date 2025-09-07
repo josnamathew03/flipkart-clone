@@ -12,8 +12,7 @@ const CardRow = () => {
   useEffect(() => {
     setPaginated(products.slice(pageIndex[0], pageIndex[1]))
   }, [pageIndex, products])
-  console.log(pageIndex)
-  console.log(paginated)
+
 
   return (
     <div className='card-row'>
@@ -24,10 +23,10 @@ const CardRow = () => {
           <p style={{'textAlign': 'center','display': 'flex', 'justifyContent': 'center', 'alignItems': 'center' ,'height': '300px' , 'fontSize': '20px', 'width': '100%' }}>No results</p>
         ) : (
           paginated.map(product => <Card key={product.id} {...product} />)
-        )}
-      </div>
-    </div>
-  )
+        )}                                                                 
+      </div>                                              
+    </div>                
+  )     
 }
 
 export default CardRow

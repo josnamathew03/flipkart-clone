@@ -39,7 +39,13 @@ const Pagination = () => {
               )
             })}
            
-            <a href='/' className='next-anchor'>
+            <a href='/' className='next-anchor' onClick={e => {
+                    e.preventDefault()
+                    setCurrentPage(currentPage+1)
+                    setPageIndex(pages[currentPage])
+                    console.log(currentPage)
+                  }}>
+
               NEXT
             </a>
           </nav>
