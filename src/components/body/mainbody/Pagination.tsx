@@ -5,7 +5,7 @@ const Pagination = () => {
   const { setPageIndex, currentPage, setCurrentPage } =
     useContext(ProductContext)
 
-  const pages:[number,number][] = [
+  const pages: [number, number][] = [
     [0, 10],
     [10, 20],
     [20, 30],
@@ -22,32 +22,52 @@ const Pagination = () => {
       <div className='pagination-con'>
         <div className='pagination-wrap'>
           <span>Page 1 of 43</span>
-          <nav className='pagination-nav'>
-            {pages.map((each,ind) => {
+          <nav className='pagination-nav' >
+            {currentPage > 1 && (
+              <a
+                href='/'
+                className='next-anchor'
+                onClick={e => {
+                  e.preventDefault()
+                  console.log(currentPage)
+                  setCurrentPage(currentPage - 1)
+                  setPageIndex(pages[currentPage])
+                  console.log(currentPage)
+                }}
+              >
+                Previous
+              </a>
+            )}
+            {pages.map((each, ind) => {
               return (
                 <a
                   href='/'
-                  className= {currentPage===ind+1? 'first-anchor' : ''} 
+                  className={currentPage === ind + 1 ? 'first-anchor' : ''}
                   onClick={e => {
                     e.preventDefault()
                     setPageIndex(each)
-                    setCurrentPage(ind+1)
+                    setCurrentPage(ind + 1)
                   }}
                 >
-                  {ind+1}
+                  {ind + 1}
                 </a>
               )
             })}
-           
-            <a href='/' className='next-anchor' onClick={e => {
-                    e.preventDefault()
-                    setCurrentPage(currentPage+1)
-                    setPageIndex(pages[currentPage])
-                    console.log(currentPage)
-                  }}>
 
-              NEXT
-            </a>
+            {currentPage <= 9 && (
+              <a
+                href='/'
+                className='next-anchor'
+                onClick={e => {
+                  e.preventDefault()
+                  setCurrentPage(currentPage + 1)
+                  setPageIndex(pages[currentPage])
+                  console.log(currentPage)
+                }}
+              >
+                NEXT
+              </a>
+            )}
           </nav>
           <span className='pagination-span'></span>
         </div>
