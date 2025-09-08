@@ -7,30 +7,30 @@ import useRatingFilter from './useRatingFilter'
 import useSearch from './useSearch'
 import usePagination from './usePagination'
 
-export const ProductContext = createContext<ProductsContextType>(
+export const ProductContext = createContext<ProductsContextType>(   
   {} as ProductsContextType
 )
 
 const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<productType[]>([])
-  const [filtered, setFiltered] = useState<productType[]>([])
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([])
-
+  const [filtered, setFiltered] = useState<productType[]>([])    
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([])   
+      
   const price = usePriceFilter(setSelectedFilters)
   const rating = useRatingFilter(setSelectedFilters)
   const search = useSearch(setFiltered, products)
-  const pagination = usePagination()
-
+  const pagination = usePagination() 
+                                                                          
   const clearFilters = () => {
-    setSelectedFilters([])
+    setSelectedFilters([])                                 
     rating.setChecked([])
-    price.setPriceChecked([])
+    price.setPriceChecked([])                           
     setFiltered([])
     price.setMin(0)
-    price.setMax(10000)
+    price.setMax(10000) 
     price.setSliderValue(8)
   }
-
+  
   const removeFilter = (filter: string) => {
     setSelectedFilters(prev => prev.filter(f => f !== filter))
     if (filter.includes('₹')) {
@@ -39,14 +39,14 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       price.setSliderValue(8)
     } else {
       rating.setChecked(prev =>
-        prev.filter(f => f !== Number(filter.charAt(0)))
-      )
+        prev.filter(f => f !== Number(filter.charAt(0)))                  
+      )                                                                                                                                                                                                  
     }
   }
-
-  useEffect(() => {
-    let temp = products
-    if (rating.checked.length > 0) {
+                                                                                                                  
+  useEffect(() => {                    
+    let temp = products                                                                                       
+    if (rating.checked.length > 0) {              
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
@@ -59,17 +59,17 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }, [rating.checked, price.max, price.min, products])
 
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + '/data/products.json')
+    fetch(process.env.PUBLIC_URL + '/data/products.json')            
       .then(res => res.json())
       .then((data: productType[]) => setProducts(data))
       .catch(err => console.log(' error ', err))
   }, [])
-
+                            
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [filtered])
+  }, [filtered])             
 
-  return (
+  return (  
     <ProductContext.Provider
       value={{
         products,

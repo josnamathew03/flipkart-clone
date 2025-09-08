@@ -23,6 +23,8 @@
 .space {
     min-width: 124px;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .header-rest {

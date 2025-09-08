@@ -8,15 +8,18 @@ import HeaderM from './mobileComponent/headerM/HeaderM'
 import BodyM from './mobileComponent/bodyM/BodyM'
 
 import ProductsProvider from './context/products/ProductsProvider'
+import WishlistProvider from './context/wishlist/WishlistProvider'
 
 function App () {
   return (
     <div className='App'>
       <div className='desktop'>
         <ProductsProvider>
-          <Header />
-          <Body />
-          <Footer />
+          <WishlistProvider>
+            <Header />
+            <Body />
+            <Footer />
+          </WishlistProvider>
         </ProductsProvider>
       </div>
       <div className='mobile'>

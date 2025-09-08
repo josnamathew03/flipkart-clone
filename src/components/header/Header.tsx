@@ -1,15 +1,18 @@
+import { useContext } from 'react'
 import './Header.css'
 import SpanNav from './SpanNav'
 import HeaderRest from './header-rest/HeaderRest'
+import { WishlistContext } from '../../context/wishlist/WishlistProvider'
 
 const Header = () => {
+  const {wishlist} = useContext(WishlistContext)
   return (
     <>
       <div className='header-wrap'>
         <div className='header'>
           <div className='space'></div>
           <HeaderRest />
-          <div className='space'></div>
+          <div className='space'>WishList({wishlist.length})</div>
         </div>
       </div>
       <div className='header-nav-container'>
