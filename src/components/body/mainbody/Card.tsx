@@ -23,7 +23,7 @@ const Card = ({
     e.preventDefault()
     if (btnRef.current) btnRef.current.classList.toggle('like-svg')
       btnRef.current?.classList.contains('like-svg') ? 
-    dispatch({ type: 'addItem', item: { id, image, name } }):
+    dispatch({ type: 'addItem', item: { id, image, name, price, original } }):
     dispatch({ type: 'removeItem',  id })
 
   }

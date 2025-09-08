@@ -3,16 +3,20 @@ import './Header.css'
 import SpanNav from './SpanNav'
 import HeaderRest from './header-rest/HeaderRest'
 import { WishlistContext } from '../../context/wishlist/WishlistProvider'
+import {useNavigate } from 'react-router-dom'
+
 
 const Header = () => {
   const {wishlist} = useContext(WishlistContext)
+  console.log(wishlist)
+  const navigate = useNavigate()
   return (
     <>
       <div className='header-wrap'>
         <div className='header'>
           <div className='space'></div>
           <HeaderRest />
-          <div className='space'>WishList({wishlist.length})</div>
+          <div className='space' onClick={()=>navigate('/wishlist')}>WishList({wishlist.length})</div>
         </div>
       </div>
       <div className='header-nav-container'>

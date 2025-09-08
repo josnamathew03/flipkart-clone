@@ -29,10 +29,8 @@ const Pagination = () => {
                 className='next-anchor'
                 onClick={e => {
                   e.preventDefault()
-                  console.log(currentPage)
                   setCurrentPage(currentPage - 1)
                   setPageIndex(pages[currentPage])
-                  console.log(currentPage)
                 }}
               >
                 Previous
@@ -62,7 +60,6 @@ const Pagination = () => {
                   e.preventDefault()
                   setCurrentPage(currentPage + 1)
                   setPageIndex(pages[currentPage])
-                  console.log(currentPage)
                 }}
               >
                 NEXT

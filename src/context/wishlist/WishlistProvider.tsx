@@ -1,10 +1,12 @@
-import { createContext, ReactNode, useReducer, useState } from 'react'
+import { createContext, ReactNode, useReducer } from 'react'
 import { WishlistContextType } from '../../types/WishlistContextType'
 
 export  type wishlistType={
     id: number
     image: string
     name: string
+    price: number
+    original: number
   }
 
   export type actionType =
@@ -34,7 +36,8 @@ const WishlistProvider = ({ children }: { children: ReactNode })=> {
   }
 
   const [wishlist, dispatch] = useReducer(reducer, [])
-  console.log(wishlist)
+    // console.log(wishlist)
+
   return (
     <WishlistContext.Provider value={{ wishlist, dispatch }}>
       {children}

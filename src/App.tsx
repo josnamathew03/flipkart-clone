@@ -15,11 +15,11 @@ function App () {
     <div className='App'>
       <div className='desktop'>
         <ProductsProvider>
-          <WishlistProvider>
+          {/* <WishlistProvider> */}
             <Header />
             <Body />
             <Footer />
-          </WishlistProvider>
+          {/* </WishlistProvider> */}
         </ProductsProvider>
       </div>
       <div className='mobile'>
