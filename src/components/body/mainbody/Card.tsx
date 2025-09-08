@@ -1,6 +1,9 @@
-import { useContext, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { productType } from '../../../types/productType'
-import { WishlistContext } from '../../../context/wishlist/WishlistProvider'
+import {
+  WishlistContext,
+  wishlistType
+} from '../../../context/wishlist/WishlistProvider'
 
 const Card = ({
   id,
@@ -15,18 +18,30 @@ const Card = ({
   bankOffer,
   left
 }: productType) => {
+  const [className, setClassName] = useState(false)
   const dis = Math.floor(((original - price) / original) * 100)
-  const { dispatch } = useContext(WishlistContext)
-  const btnRef = useRef<SVGSVGElement  | null>(null)
+  const { wishlist, dispatch } = useContext(WishlistContext)
+useEffect(() => {
+    const exists = wishlist.some((each: wishlistType) => each.id === id)
+    setClassName(exists)
+  }, [wishlist, id])
+    
 
+  // wishlist.some(each => each.id === id)
+  //   ? setClassName(true)
+  //   : setClassName(false)
   const toggleWishlist = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault()
-    if (btnRef.current) btnRef.current.classList.toggle('like-svg')
-      btnRef.current?.classList.contains('like-svg') ? 
-    dispatch({ type: 'addItem', item: { id, image, name, price, original } }):
-    dispatch({ type: 'removeItem',  id })
 
+    wishlist.some(each => each.id === id)
+      ? dispatch({ type: 'removeItem', id })
+      : dispatch({
+          type: 'addItem',
+          item: { id, image, name, price, original }
+        })
   }
+  // console.log(className)
+  
 
   return (
     <div className='card-container'>
@@ -38,7 +53,7 @@ const Card = ({
           <div className='like-btn-con' onClick={e => toggleWishlist(e)}>
             <div className='like-btn'>
               <svg
-                ref={btnRef}
+                className={className ? 'like-svg' : ''}
                 xmlns='http://www.w3.org/2000/svg'
                 width='16'
                 height='16'

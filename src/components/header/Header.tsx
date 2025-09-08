@@ -7,9 +7,10 @@ import {useNavigate } from 'react-router-dom'
 
 
 const Header = () => {
-  const {wishlist} = useContext(WishlistContext)
-  console.log(wishlist)
+  // const {wishlist} = useContext(WishlistContext)
+  // console.log(wishlist)
   const navigate = useNavigate()
+const wishlist= JSON.parse(localStorage.getItem('wishlist') || '[]')
   return (
     <>
       <div className='header-wrap'>
