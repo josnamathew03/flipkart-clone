@@ -186,6 +186,15 @@
     display: inline-flex;
 }
 
+.like-btn svg {
+    fill: #e0e0e1
+
+}
+
+.like-svg {
+    fill: #e840a8 !important
+}
+
 .sponsored-div {
     font-size: 12px;
     font-weight: 400;
@@ -377,13 +386,14 @@
     margin-left: 24px;
     font-size: 16px;
 }
-.yes-no-div span{
-        border-radius: 2px;
+
+.yes-no-div span {
+    border-radius: 2px;
     border: 1px solid #d7d7d7;
     padding: 6px 28px;
     margin-right: 8px;
     font-weight: 500;
-        font-size: 14px;
+    font-size: 14px;
     display: inline-block;
     cursor: pointer;
 }
