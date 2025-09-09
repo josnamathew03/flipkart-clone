@@ -26,4 +26,7 @@ export type ProductsContextType = {
   setProducts: (products:productType[]) => void 
   currentPage: number
   setCurrentPage: (value: number) => void
+  paginated: productType[]
+  lowtohigh: boolean
+  setLowtohigh: React.Dispatch<React.SetStateAction<boolean>>
 }

@@ -6,6 +6,7 @@ import usePriceFilter from './usePriceFilter'
 import useRatingFilter from './useRatingFilter'
 import useSearch from './useSearch'
 import usePagination from './usePagination'
+import useSort from './useSort'
 
 export const ProductContext = createContext<ProductsContextType>(   
   {} as ProductsContextType
@@ -19,7 +20,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const price = usePriceFilter(setSelectedFilters)
   const rating = useRatingFilter(setSelectedFilters)
   const search = useSearch(setFiltered, products)
-  const pagination = usePagination() 
+  const pagination = usePagination(products) 
+  const sorting = useSort()
                                                                           
   const clearFilters = () => {
     setSelectedFilters([])                                 
@@ -45,18 +47,21 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }
                                                                                                                   
   useEffect(() => {                    
-    let temp = products                                                                                       
+    let temp = pagination.paginated                                                                                       
     if (rating.checked.length > 0) {              
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
-    if (rating.checked.length > 0 || price.min > 0 || price.max < 10000) {
+    if(sorting.lowtohigh){
+      temp = temp.sort((a,b)=> a.price - b.price)
+    }
+    if (rating.checked.length > 0 || price.min > 0 || price.max < 10000 || sorting.lowtohigh) {
       setFiltered(temp)
     }
     else{
       setFiltered([])
-    }
-  }, [rating.checked, price.max, price.min, products])
+    }              
+  }, [rating.checked, price.max, price.min, products,sorting.lowtohigh])
 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + '/data/products.json')            
@@ -96,7 +101,10 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         pageIndex: pagination.pageIndex,
         setPageIndex: pagination.setPageIndex,
         setCurrentPage: pagination.setCurrentPage,
-        currentPage: pagination.currentPage
+        currentPage: pagination.currentPage,
+        paginated: pagination.paginated,
+        lowtohigh: sorting.lowtohigh,
+        setLowtohigh: sorting.setLowtohigh
 
       }}
     >

@@ -11,8 +11,8 @@ export type wishlistType = {
 }
 
 export type actionType =
-  | { type: 'addItem'; item: wishlistType }
-  | { type: 'removeItem'; id: number }
+  | { type: 'addItem', item: wishlistType }
+  | { type: 'removeItem', id: number }
   | { type: 'clearAll' }
 
 export const WishlistContext = createContext<WishlistContextType>(

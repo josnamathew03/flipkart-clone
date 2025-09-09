@@ -1,17 +1,12 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext  } from 'react'
 import Card from './Card'
 import { ProductContext } from '../../../context/products/ProductsProvider'
-import { productType } from '../../../types/productType'
 
 const CardRow = () => {
   const ctx = useContext(ProductContext)
 
-  const { products, filtered, pageIndex, searchInput } = ctx
-  const [paginated, setPaginated] = useState<productType[]>([])
+  const { filtered, searchInput,paginated } = ctx
 
-  useEffect(() => {
-    setPaginated(products.slice(pageIndex[0], pageIndex[1]))
-  }, [pageIndex, products])
 
 
   return (
