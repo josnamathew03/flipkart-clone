@@ -4,18 +4,18 @@ import {
   WishlistContext,
   wishlistType
 } from '../../../context/wishlist/WishlistProvider'
-
+    
 const Card = ({
-  id,
-  image,
+  id,    
+  image, 
   sponsored,
   name,
-  brand,
-  stars,
+  brand,     
+  stars,         
   flipAssured,
-  price,
+  price,     
   original,
-  bankOffer,
+  bankOffer,  
   left
 }: productType) => {
   const [className, setClassName] = useState(false)
@@ -25,8 +25,9 @@ useEffect(() => {
     const exists = wishlist.some((each: wishlistType) => each.id === id)
     setClassName(exists)
   }, [wishlist, id])
-    
-
+                                                        
+                                                                                            
+                                               
   // wishlist.some(each => each.id === id)
   //   ? setClassName(true)
   //   : setClassName(false)
@@ -41,9 +42,9 @@ useEffect(() => {
         })
   }
   // console.log(className)
-  
-
-  return (
+                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                            
+  return (  
     <div className='card-container'>
       <div className='card-wrap'>
         <a href='/' className='image-anchor'>
