@@ -22,6 +22,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   const search = useSearch(setFiltered, products)
   const pagination = usePagination(products) 
   const sorting = useSort()
+
+  const paginated = pagination.paginated
                                                                           
   const clearFilters = () => {
     setSelectedFilters([])                                 
@@ -47,21 +49,28 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
   }
                                                                                                                   
   useEffect(() => {                    
-    let temp = pagination.paginated                                                                                       
+    let temp = paginated                                                                                    
     if (rating.checked.length > 0) {              
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
-    if(sorting.lowtohigh){
+    if(sorting.sort === 'lowtohigh'){
       temp = temp.sort((a,b)=> a.price - b.price)
     }
-    if (rating.checked.length > 0 || price.min > 0 || price.max < 10000 || sorting.lowtohigh) {
+    else if(sorting.sort === 'hightolow'){
+      temp = temp.sort((a,b)=>  b.price-a.price)
+    }
+    else if(sorting.sort === 'popular'){
+      //  temp = paginated
+    }
+ 
+    if (rating.checked.length > 0 || price.min > 0 || price.max < 10000 || sorting.sort) {
       setFiltered(temp)
     }
     else{
       setFiltered([])
     }              
-  }, [rating.checked, price.max, price.min, products,sorting.lowtohigh])
+  }, [rating.checked, price.max,paginated, price.min, products,sorting.sort])
 
   useEffect(() => {
     fetch(process.env.PUBLIC_URL + '/data/products.json')            
@@ -102,9 +111,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         setPageIndex: pagination.setPageIndex,
         setCurrentPage: pagination.setCurrentPage,
         currentPage: pagination.currentPage,
-        paginated: pagination.paginated,
-        lowtohigh: sorting.lowtohigh,
-        setLowtohigh: sorting.setLowtohigh
+        paginated,
+        dispatch: sorting.dispatch
 
       }}
     >

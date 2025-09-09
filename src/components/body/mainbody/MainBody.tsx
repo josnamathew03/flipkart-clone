@@ -5,7 +5,7 @@ import Pagination from './Pagination'
 import { ProductContext } from '../../../context/products/ProductsProvider'
 
 const MainBody = () => {
-  const {setLowtohigh} = useContext(ProductContext)
+  const {dispatch} = useContext(ProductContext)
   return (
     <div className='mainBody'>
       <div className='des-con'>
@@ -51,9 +51,9 @@ const MainBody = () => {
             <span className='count-span'>(Showing 1 – 40 products of 1,720 products)</span>
             <div className='body-nav'>
               <span>Sort By</span>
-              <div className='body-nav-div blue-nav'>Popularity</div>
-              <div className='body-nav-div' onClick={()=> setLowtohigh(true)}>Price -- Low to High</div>
-              <div className='body-nav-div'>Price -- High to Low</div>
+              <div className='body-nav-div blue-nav' onClick={()=>dispatch('popular')}>Popularity</div>
+              <div className='body-nav-div' onClick={()=> dispatch('lowtohigh')}>Price -- Low to High</div>
+              <div className='body-nav-div' onClick={()=> dispatch('hightolow')}>Price -- High to Low</div>
               <div className='body-nav-div'>Newest First</div>
               <div className='body-nav-div'>Discount</div>
             </div>

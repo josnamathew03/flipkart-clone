@@ -1,3 +1,4 @@
+import { sortActionType } from "../context/products/useSort"
 import { productType } from "./productType"
 
 export type ProductsContextType = {
@@ -27,6 +28,5 @@ export type ProductsContextType = {
   currentPage: number
   setCurrentPage: (value: number) => void
   paginated: productType[]
-  lowtohigh: boolean
-  setLowtohigh: React.Dispatch<React.SetStateAction<boolean>>
+  dispatch: React.ActionDispatch<[action: sortActionType]>
 }
