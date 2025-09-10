@@ -8,7 +8,6 @@ import {useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const {wishlist} = useContext(WishlistContext)
-  // console.log(wishlist)
   const navigate = useNavigate()
   return (
     <>

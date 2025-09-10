@@ -40,7 +40,6 @@ const WishlistProvider = ({ children }: { children: ReactNode }) => {
     const storedWishlist = localStorage.getItem('wishlist')
     return storedWishlist ? JSON.parse(storedWishlist) : []
   })
-  // console.log(wishlist)
   useEffect(() => {
     localStorage.setItem('wishlist',JSON.stringify(wishlist))
   }, [wishlist])

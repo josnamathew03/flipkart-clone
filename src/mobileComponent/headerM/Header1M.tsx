@@ -1,6 +1,9 @@
+import { useContext } from 'react'
 import HeaderAnchorM from './HeaderAnchorM'
+import { ProductContext } from '../../context/products/ProductsProvider'
 
 const Header1M = () => {
+  const {setSearchInput} = useContext(ProductContext)
   return (
            <div className='header1-m'>
           <HeaderAnchorM

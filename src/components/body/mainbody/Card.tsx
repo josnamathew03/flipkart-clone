@@ -41,7 +41,6 @@ useEffect(() => {
           item: { id, image, name, price, original }
         })
   }
-  // console.log(className)
                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                             
   return (  

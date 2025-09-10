@@ -3,18 +3,19 @@ import CardRow from './CardRow'
 import './MainBody.css'
 import Pagination from './Pagination'
 import { ProductContext } from '../../../context/products/ProductsProvider'
+import { sortActionType } from '../../../context/products/useSort'
 
 const MainBody = () => {
-  const {dispatch} = useContext(ProductContext)
-  return (
+  const {dispatch, sort} = useContext(ProductContext)
+  const sortNav: sortActionType[] = ['popularity', 'low-to-high', 'high-to-low']
+  return (      
     <div className='mainBody'>
       <div className='des-con'>
-        <div className='des-wrap'>
+        <div className='des-wrap'> 
           <div className='des'>
             <div className='pages-des'>
               <div>
-                <a href='/'>Home</a>
-
+                <a href='/'>Home</a>        
                 <svg
                   width='16'
                   height='27'
@@ -51,11 +52,12 @@ const MainBody = () => {
             <span className='count-span'>(Showing 1 – 40 products of 1,720 products)</span>
             <div className='body-nav'>
               <span>Sort By</span>
-              <div className='body-nav-div blue-nav' onClick={()=>dispatch('popular')}>Popularity</div>
+              {sortNav.map(each=> <div className= {sort === each ? 'body-nav-div blue-nav' : 'body-nav-div'}  onClick={()=> dispatch(each)}>{each}</div>)}
+              {/* <div className='body-nav-div blue-nav' onClick={()=>dispatch('popular')}>Popularity</div>
               <div className='body-nav-div' onClick={()=> dispatch('lowtohigh')}>Price -- Low to High</div>
               <div className='body-nav-div' onClick={()=> dispatch('hightolow')}>Price -- High to Low</div>
               <div className='body-nav-div'>Newest First</div>
-              <div className='body-nav-div'>Discount</div>
+              <div className='body-nav-div'>Discount</div> */}
             </div>
           </div>
         </div>

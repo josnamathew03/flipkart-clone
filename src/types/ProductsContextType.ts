@@ -29,4 +29,5 @@ export type ProductsContextType = {
   setCurrentPage: (value: number) => void
   paginated: productType[]
   dispatch: React.ActionDispatch<[action: sortActionType]>
+  sort: string
 }

@@ -7,7 +7,6 @@ import Header from '../header/Header'
 
 const Wishlist = () => {
   const { wishlist, dispatch } = useContext(WishlistContext)
-  console.log(wishlist)
   return (
     <>
       <Header />

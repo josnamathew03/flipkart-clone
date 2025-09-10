@@ -54,13 +54,13 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
       temp = temp.filter(p => rating.checked.some(v => p.stars.star >= v))
     }
     temp = temp.filter(p => p.price >= price.min && p.price <= price.max)
-    if(sorting.sort === 'lowtohigh'){
+    if(sorting.sort === 'low-to-high'){
       temp = temp.sort((a,b)=> a.price - b.price)
     }
-    else if(sorting.sort === 'hightolow'){
+    else if(sorting.sort === 'high-to-low'){
       temp = temp.sort((a,b)=>  b.price-a.price)
     }
-    else if(sorting.sort === 'popular'){
+    else if(sorting.sort === 'popularity'){
       //  temp = paginated
     }
  
@@ -112,7 +112,8 @@ const ProductsProvider = ({ children }: { children: ReactNode }) => {
         setCurrentPage: pagination.setCurrentPage,
         currentPage: pagination.currentPage,
         paginated,
-        dispatch: sorting.dispatch
+        dispatch: sorting.dispatch,
+        sort: sorting.sort
 
       }}
     >
